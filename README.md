@@ -4,9 +4,9 @@ Cource review app Tu _r_ eview
 To submit new code:
 `cd <project root>
 
-git add .
+`git add .`
 
-git commit -m "<message>"`
+`git commit -m "<message>"`
 
 now double check if everything works, if it does
 
