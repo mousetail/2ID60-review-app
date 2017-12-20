@@ -1,5 +1,5 @@
 # 2ID60-review-app
-Cource review app T/ureview
+Cource review app Tureview
 
 To submit new code:
 `cd <project root>
@@ -10,4 +10,3 @@ now double check if everything works, if it does
 else fix the problem then:
 `git commit --amend -m "<message>"`
 go back two steps ago.
-
