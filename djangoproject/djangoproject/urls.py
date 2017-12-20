@@ -15,7 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth import views as authviews
+from tureview import views as tuview
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls, name='admin'),
+    url(r'^', tuview.home, name='home'),
+    url(r'^search', tuview.search, name='search'),
+    url(r'^course/(?P<code>[0-9a-zA-Z]+)/$', tuview.course,
+        name='course'), #note to convert to upper case
+    url(r'^course/(?P<code>[0-9a-zA-Z]+)/review/$', tuview.review,
+        name='review'),
+    url(r'^accounts/login$', authviews.login, name='login'),
+    url(r'^accounts/logout$', authviews.logout, {'next-page': '/'},
+        name='logout'),
+    url(r'^accounts/register$', tuview.register)
 ]
