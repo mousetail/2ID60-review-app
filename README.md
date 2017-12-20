@@ -1,5 +1,5 @@
 # 2ID60-review-app
-Cource review app Tu_r_eview
+Cource review app Tu _r_ eview
 
 To submit new code:
 `cd <project root>
