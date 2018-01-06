@@ -1,3 +1,22 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def home(request):
+    return HttpResponse("")
+
+
+def search(request):
+    return HttpResponse("")
+
+
+def course(request):
+    return HttpResponse("")
+
+
+def review(request):
+    return HttpResponse("")
+
+
+def register(request):
+    return HttpResponse("")
