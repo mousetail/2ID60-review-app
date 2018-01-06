@@ -1,0 +1,16 @@
+{% load static %}
+<html>
+<head>
+    <title>tureview</title>
+    <script src="{% static 'javascript/jquiry.js' %}" defer></script>
+    <script src="{% static 'javascript/search.js' %}" defer></script>
+</head>
+<body>
+    <form id="searchform" method="POST">
+        <label for="idfield">ID: </label>
+        <input id="idfield" name="courseID"><br>
+
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

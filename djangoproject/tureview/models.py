@@ -26,6 +26,7 @@ class Timeslot(models.Model):
                                 choices=tuple((str(i), str(i))
                                               for i in range(1, 5)))
     year = models.IntegerField()
+
     def __str__(self):
         return str(self.course)+" in "+str(self.year)+" Q"+str(self.quartile)+" timeslot "+str(self.letter).upper()
 

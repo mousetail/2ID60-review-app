@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls.static import static
 from django.contrib.auth import views as authviews
+from django.conf import settings
+
 from tureview import views as tuview
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls, name='admin'),
-    url(r'^', tuview.home, name='home'),
+    url(r'^$', tuview.home, name='home'),
     url(r'^search', tuview.search, name='search'),
     url(r'^course/(?P<code>[0-9a-zA-Z]+)/$', tuview.course,
         name='course'), #note to convert to upper case
@@ -30,4 +33,4 @@ urlpatterns = [
     url(r'^accounts/logout$', authviews.logout, {'next-page': '/'},
         name='logout'),
     url(r'^accounts/register$', tuview.register)
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
