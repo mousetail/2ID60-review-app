@@ -1,0 +1,90 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TUreview">
+  <meta name="author" content="Erik">
+  <meta name="author" content="Tess">
+  <meta name="author" content="Else">
+  <meta name="author" content="Maurits">
+
+  <title>TUreview</title>
+
+  <!-- Link the Bootstrap CSS files -->
+  <!-- Latest compiled and minified CSS -->
+  <link  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+  integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+  crossorigin="anonymous" rel="stylesheet">
+
+  <!-- Link to Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/0631d14af0.css">
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <section class="bg-light">
+    <div class="container">
+      <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Navbar</span>
+      </nav>
+    </div>
+  </section>
+
+  {% block content %}
+  {% endblock %}
+
+  <!-- Footer section -->
+  <footer class="bg-dark">
+    <div class="footer-above">
+      <div class="container" style="color: white;">
+        <div class="row bg-dark">
+          <div class="footer-col col-md-4">
+            <h3>About this website</h3>
+            <p>This website is build for the course <i>2ID60 - Web Technology </i> from the
+              <a href="https://www.tue.nl/">Eindhoven University of Technology</a>
+            </p>
+          </div>
+          <div class="footer-col col-md-4">
+            <h3>Terms & Conditions</h3>
+            <p>
+              We do not take any responsility for the content placed on this website
+            </p>
+          </div>
+          <div class="footer-col col-md-4">
+            <h3>Authors</h3>
+            <p>Erik, Tess, Else & Maurits
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-below">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              Copyright &copy; TUreview 2017
+            </div>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+  <!-- Link JQuery files -->
+  <script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+
+  <!-- Link Bootstrap JavaScript files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+  integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+  integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+  crossorigin="anonymous"></script>
+
+</body>
+</html>
