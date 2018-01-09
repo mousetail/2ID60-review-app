@@ -11,6 +11,7 @@ class Teacher(models.Model):
 
 class Course(models.Model):
     id = models.CharField(max_length=6, primary_key=True)
+    name = models.CharField(max_length=199)
     descriptionShort = models.CharField(max_length=200)
     descriptionLong = models.TextField()
     
