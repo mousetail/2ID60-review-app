@@ -44,6 +44,7 @@ class Student(models.Model):
 
     def __str__(self):
         return self.user.username
+
 class Review(models.Model):
     student = models.ForeignKey(Student)
     course = models.ForeignKey(Course)

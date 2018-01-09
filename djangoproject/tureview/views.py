@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Review
 
 
 def home(request):
@@ -11,11 +12,13 @@ def search(request):
 
 
 def course(request, code=""):
-    return HttpResponse("course")
+    #reviews = Review.objects.filter(id__iexact=code).order_by('date')
+    reviews = Review.objects.order_by('date')
+    return render(request, "tureview/course.html", {'reviews': reviews})
 
 
 def review(request):
-    return HttpResponse("request")
+    return render(request, "tureview/review.html")
 
 
 def register(request):
