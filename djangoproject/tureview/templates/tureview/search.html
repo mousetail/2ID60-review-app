@@ -6,11 +6,39 @@
     <script src="{% static 'javascript/search.js' %}" defer></script>
 </head>
 <body>
+    <div id="courseTemplate" style="display: none;">
+        <div id="cID"></div>
+        <div id="cName"></div>
+        <div id="cShortDesc"></div>
+        <div id="cYears">
+
+        </div>
+    </div>
+    <div id="yearTemplate" style="display: none;">
+        <span id="yName"></span>
+        <span id="yQs"></span>
+    </div>
+    <span id="quartileTemplate" style="display: none;">
+        <span id="qName"></span>
+        <span id="qSlots"></span>
+    </span>
     <form id="searchform" method="POST">
         <label for="idfield">ID: </label>
         <input id="idfield" name="courseID"><br>
 
+        <label for="yearfield">Year: </label>
+        <input id="yearfield" name="year"><br>
+
+        <label for="quartilefield">Quartile: </label>
+        <input id="quartilefield" name="quartile"><br>
+
+        <label for="timeslotfield">Timeslot: </label>
+        <input id="timeslotfield" name="timeslot"><br>
+
         <button type="submit">submit</button>
     </form>
+
+    <div id="result">
+    </div>
 </body>
 </html>

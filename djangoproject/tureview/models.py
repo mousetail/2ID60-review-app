@@ -44,7 +44,6 @@ class Student(models.Model):
 
     def __str__(self):
         return self.user.username
-
 class Review(models.Model):
     student = models.ForeignKey(Student)
     course = models.ForeignKey(Course)
@@ -52,5 +51,3 @@ class Review(models.Model):
     reviewLong = models.TextField()
     date = models.DateField(default=timezone.now)
     timeslot = models.ForeignKey(Timeslot)
-
-

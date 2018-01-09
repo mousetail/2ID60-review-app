@@ -20,7 +20,7 @@ from django.contrib.auth import views as authviews
 from django.conf import settings
 
 from tureview import views as tuview
-
+from tureview import rest as turest
 urlpatterns = [
     url(r'^admin/', admin.site.urls, name='admin'),
     url(r'^$', tuview.home, name='home'),
@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^accounts/login$', authviews.login, name='login'),
     url(r'^accounts/logout$', authviews.logout, {'next-page': '/'},
         name='logout'),
-    url(r'^accounts/register$', tuview.register)
+    url(r'^accounts/register$', tuview.register),
+    url(r'^api/search$', turest.search)
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
