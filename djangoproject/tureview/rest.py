@@ -37,14 +37,13 @@ def search(request):
             courses = courses.filter(faculty=facultijd)
         if cname != "":
             courses = courses.filter(name__icontains=cname)
-        #courses = ()
         timeslots = models.Timeslot.objects.all()
         timeslots = timeslots.filter(course__in=courses)
         if year != 0:
             timeslots = timeslots.filter(year=year)
 
         if timeslot != "":
-            timeslots = timeslots.filter(letter=timeslot[0].lower())
+            timeslots = timeslots.filter(letter__iexact=timeslot[0].lower())
 
         if quartile != -1:
             timeslots = timeslots.filter(quartile=quartile)
