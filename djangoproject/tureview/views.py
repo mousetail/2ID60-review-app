@@ -9,7 +9,9 @@ def home(request):
 
 def search(request):
     faculties = Course.FACULTY_OPTIONS
-    return render(request, "tureview/search.html", {"faculties": faculties})
+    return render(request, "tureview/search.html", {"faculties": faculties,
+                                                    "letters": [(i,i.upper()) for i in 'abcdex'],
+                                                    "quartiles": [(i, "Q"+str(i)) for i in range(1,5)]})
 
 
 def course(request, code=""):

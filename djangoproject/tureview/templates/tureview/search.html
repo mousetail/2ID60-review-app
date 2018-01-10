@@ -41,10 +41,20 @@
         <input id="yearfield" name="year"><br>
 
         <label for="quartilefield">Quartile: </label>
-        <input id="quartilefield" name="quartile"><br>
+        <select id="quartilefield" name="quartile">
+            <option value="" selected="selected">any</option>
+            {% for q in quartiles %}
+                <option value="{{ q.0 }}">{{ q.1 }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="timeslotfield">Timeslot: </label>
-        <input id="timeslotfield" name="timeslot"><br>
+        <select id="timeslotfield" name="timeslot">
+            <option value="" selected="selected">any</option>
+            {% for lt in letters %}
+                <option value="{{ lt.0 }}">{{ lt.1 }}</option>
+            {% endfor %}
+        </select><br>
 
         <button type="submit">submit</button>
     </form>
