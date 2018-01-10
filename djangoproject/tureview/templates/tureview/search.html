@@ -1,65 +1,77 @@
+{% extends 'tureview/base.html' %}
 {% load static %}
-<html>
-<head>
-    <title>tureview</title>
-    <script src="{% static 'javascript/jquiry.js' %}" defer></script>
-    <script src="{% static 'javascript/search.js' %}" defer></script>
-</head>
-<body>
-    <div id="courseTemplate" style="display: none;">
-        <div id="cID"></div>
-        <div id="cName"></div>
-        <div id="cShortDesc"></div>
-        <div id="cYears">
 
-        </div>
+{% block content %}
+<section class="page-section cta">
+  <div class="container">
+    <div class="row center">
+      <!--<html>
+      <head>
+          <title>tureview</title> -->
+          <script src="{% static 'javascript/jquiry.js' %}" defer></script>
+          <script src="{% static 'javascript/search.js' %}" defer></script>
+      <!--</head>
+      <body> -->
+          <div id="courseTemplate" style="display: none;">
+              <div id="cID"></div>
+              <div id="cName"></div>
+              <div id="cShortDesc"></div>
+              <div id="cYears">
+
+              </div>
+          </div>
+          <div id="yearTemplate" style="display: none;">
+              <span id="yName"></span>
+              <span id="yQs"></span>
+          </div>
+          <span id="quartileTemplate" style="display: none;">
+              <span id="qName"></span>
+              <span id="qSlots"></span>
+          </span>
+          <form id="searchform" method="POST">
+              <label for="idfield">ID: </label>
+              <input id="idfield" name="courseID"><br>
+
+              <label for="facfield">Faculty: </label>
+              <select id="facfield" name="fac">
+                  <option value="" selected="selected">any</option>
+                  {% for fac in faculties %}
+                  <option value="{{ fac.0 }}">{{ fac.1 }}</option>
+                  {% endfor %}
+              </select><br>
+
+              <label for="namefield">Name: </label>
+              <input id="namefield"><br>
+
+              <label for="yearfield">Year: </label>
+              <input id="yearfield" name="year"><br>
+
+              <label for="quartilefield">Quartile: </label>
+              <select id="quartilefield" name="quartile">
+                  <option value="" selected="selected">any</option>
+                  {% for q in quartiles %}
+                      <option value="{{ q.0 }}">{{ q.1 }}</option>
+                  {% endfor %}
+              </select><br>
+
+              <label for="timeslotfield">Timeslot: </label>
+              <select id="timeslotfield" name="timeslot">
+                  <option value="" selected="selected">any</option>
+                  {% for lt in letters %}
+                      <option value="{{ lt.0 }}">{{ lt.1 }}</option>
+                  {% endfor %}
+              </select><br>
+
+              <button type="submit">submit</button>
+          </form>
+
+          <div id="result">
+          </div>
+      <!--
+      </body>
+      </html> -->
     </div>
-    <div id="yearTemplate" style="display: none;">
-        <span id="yName"></span>
-        <span id="yQs"></span>
-    </div>
-    <span id="quartileTemplate" style="display: none;">
-        <span id="qName"></span>
-        <span id="qSlots"></span>
-    </span>
-    <form id="searchform" method="POST">
-        <label for="idfield">ID: </label>
-        <input id="idfield" name="courseID"><br>
+  </div>
+</section>
 
-        <label for="facfield">Faculty: </label>
-        <select id="facfield" name="fac">
-            <option value="" selected="selected">any</option>
-            {% for fac in faculties %}
-            <option value="{{ fac.0 }}">{{ fac.1 }}</option>
-            {% endfor %}
-        </select><br>
-
-        <label for="namefield">Name: </label>
-        <input id="namefield"><br>
-
-        <label for="yearfield">Year: </label>
-        <input id="yearfield" name="year"><br>
-
-        <label for="quartilefield">Quartile: </label>
-        <select id="quartilefield" name="quartile">
-            <option value="" selected="selected">any</option>
-            {% for q in quartiles %}
-                <option value="{{ q.0 }}">{{ q.1 }}</option>
-            {% endfor %}
-        </select><br>
-
-        <label for="timeslotfield">Timeslot: </label>
-        <select id="timeslotfield" name="timeslot">
-            <option value="" selected="selected">any</option>
-            {% for lt in letters %}
-                <option value="{{ lt.0 }}">{{ lt.1 }}</option>
-            {% endfor %}
-        </select><br>
-
-        <button type="submit">submit</button>
-    </form>
-
-    <div id="result">
-    </div>
-</body>
-</html>
+{% endblock %}
