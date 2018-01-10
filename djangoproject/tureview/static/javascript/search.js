@@ -9,6 +9,8 @@ $("#searchform").on("submit", function(ev) {
             {"method":"POST",
             data : {
                    "year": $("#yearfield").val(),
+                   "fac": $("#facfield").val(),
+                   "name": $("#namefield").val(),
                    "slot": $("#timeslotfield").val(),
                    "quartile": $("#quartilefield").val()
                    }

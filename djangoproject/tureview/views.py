@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Review
+from .models import Review, Course
 
 
 def home(request):
@@ -8,7 +8,8 @@ def home(request):
 
 
 def search(request):
-    return render(request, "tureview/search.html", {"abc": "def"})
+    faculties = Course.FACULTY_OPTIONS
+    return render(request, "tureview/search.html", {"faculties": faculties})
 
 
 def course(request, code=""):

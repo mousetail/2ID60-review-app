@@ -10,6 +10,7 @@ def search(request):
     # code, facultijd, jaar, quartiel, tijdslot
     code = request.POST.get("code", "")
     facultijd = request.POST.get("fac", "")
+    cname = request.POST.get("name", "")
     year = request.POST.get("year", "0")
     quartile = request.POST.get("quartile", "-1")
     if quartile != "":
@@ -31,16 +32,25 @@ def search(request):
             error = "no course with code \"" + code + "\" found"
 
     else:
-        filter = models.Timeslot.objects.all()
+        courses = models.Course.objects.all()
+        if facultijd != "":
+            courses = courses.filter(faculty=facultijd)
+        if cname != "":
+            courses = courses.filter(name__icontains=cname)
+        #courses = ()
+        timeslots = models.Timeslot.objects.all()
+        timeslots = timeslots.filter(course__in=courses)
         if year != 0:
-            filter = filter.filter(year=year)
+            timeslots = filter.filter(year=year)
 
         if timeslot != "":
-            filter = filter.filter(letter=timeslot[0].lower())
+            timeslots = filter.filter(letter=timeslot[0].lower())
 
         if quartile != -1:
-            filter = filter.filter(quartile=quartile)
-        results = filter
+            timeslots = filter.filter(quartile=quartile)
+
+
+        results = timeslots
     if error:
         output = {"error": error}
     else:

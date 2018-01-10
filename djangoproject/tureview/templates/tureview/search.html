@@ -27,7 +27,12 @@
         <input id="idfield" name="courseID"><br>
 
         <label for="facfield">Faculty: </label>
-        <input id="facfield" name="fac"><br>
+        <select id="facfield" name="fac">
+            <option value="" selected="selected">any</option>
+            {% for fac in faculties %}
+            <option value="{{ fac.0 }}">{{ fac.1 }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="namefield">Name: </label>
         <input id="namefield"><br>
