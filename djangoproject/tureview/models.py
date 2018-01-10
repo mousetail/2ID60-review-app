@@ -14,6 +14,20 @@ class Course(models.Model):
     name = models.CharField(max_length=199)
     descriptionShort = models.CharField(max_length=200)
     descriptionLong = models.TextField()
+
+    FACULTY_OPTIONS = (
+        ('BMT', 'Biomedishe Technologie'),
+        ('BK', 'Bouwkunde'),
+        ('ESoE', 'Eindhoven School of Education'),
+        ('EE', 'Electrical Engineering'),
+        ('ID', 'Industrial Design'),
+        ('IEID', 'Industrial Engineering & Innovation Sciences'),
+        ('ST', 'Scheikundige Technologie'),
+        ('TN', 'Technishe Natuurkunde'),
+        ('wbtk', 'Werktuigboukunde'),
+        ('WI', 'Wiskunde & Informatica')
+    )
+    faculty = models.CharField(choices=FACULTY_OPTIONS, max_length=4, default='BK')
     
     teachers = models.ManyToManyField(Teacher)
 
@@ -40,7 +54,7 @@ class Student(models.Model):
         ('ee', 'Electrical Engineering'),
         ('id', 'Industrial Design')
         )
-    major = models.CharField(max_length=16)
+    major = models.CharField(max_length=16, choices=MAJOR_OPTIONS)
 
     def __str__(self):
         return self.user.username
