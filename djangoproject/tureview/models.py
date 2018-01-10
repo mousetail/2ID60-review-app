@@ -24,6 +24,7 @@ class Course(models.Model):
         ('ESoE', 'Eindhoven School of Education'),
         ('EE', 'Electrical Engineering'),
         ('ID', 'Industrial Design'),
+        ('TUE', 'Technische Universiteit Eindhoven'),
         ('IEID', 'Industrial Engineering & Innovation Sciences'),
         ('ST', 'Scheikundige Technologie'),
         ('TN', 'Technishe Natuurkunde'),
