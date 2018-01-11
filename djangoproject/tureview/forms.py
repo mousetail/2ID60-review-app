@@ -2,6 +2,7 @@ from django import forms as dforms
 from django.core.exceptions import ValidationError
 from django.contrib.auth.password_validation import validate_password
 from .models import Student
+
 class RegistrationForm(dforms.Form):
     username = dforms.CharField(label='username')
     password = dforms.CharField(widget = dforms.PasswordInput, label='password')

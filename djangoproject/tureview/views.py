@@ -1,19 +1,9 @@
 from django.shortcuts import render
-<<<<<<< HEAD
-from django.http import HttpResponse
-from .models import Review, Course
-from django.contrib.auth.decorators import login_required
-||||||| merged common ancestors
-from django.http import HttpResponse
-from .models import Review, Course
-=======
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login
 from .models import Review, Course, Student
 from .forms import RegistrationForm
->>>>>>> da910f8221c936ca0e60029473954ad58fa4fb6f
-
 
 def home(request):
     return render(request, "tureview/home.html")
@@ -37,22 +27,6 @@ def review(request):
 
 
 def register(request):
-<<<<<<< HEAD
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('home')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration.html', {'form': form})
-||||||| merged common ancestors
-    return HttpResponse("register")
-=======
     if request.method == "POST":
         form = RegistrationForm(request.POST)
     else:
@@ -79,4 +53,6 @@ def register(request):
         else:
             form.add_error("password_2", "Passwords do not match")
     return render(request, "registration/register.html", {"form": form})
->>>>>>> da910f8221c936ca0e60029473954ad58fa4fb6f
+
+def profile(request):
+    return render(request, "tureview/profile.html")
