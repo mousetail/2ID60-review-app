@@ -18,15 +18,16 @@ class RegistrationForm(dforms.Form):
 
 
 class ReviewForm(dforms.Form):
+    def __init__(self, timeSlotOptions, *args, **kwargs):
+        dforms.Form.__init__(self, *args, **kwargs)
+        self.fields["timeslot"].choices = timeSlotOptions
     summary = dforms.CharField(widget=dforms.TextInput(
         attrs={'placeholder': 'A once-sentence summary of your review'}))
     content = dforms.CharField(widget=dforms.Textarea())
     year = dforms.IntegerField(label='year course taken', initial=2000, widget=dforms.NumberInput(
         attrs={'min': '1900', 'max': '2500'}
     ))
-    quartile = dforms.ChoiceField(label="quartile course taken",
-                                  choices=tuple((str(i), str(i))
-                                                for i in range(1, 5)))
-    letter = dforms.ChoiceField(label="timeslot",
-                                choices=tuple((i, i) for i in 'abcdex')
-                                )
+    timeslot = dforms.ChoiceField(label='quartile taken', choices=())
+    def clean_timeslot(self):
+        slot = self.cleaned_data['timeslot'].split(',')
+        return slot

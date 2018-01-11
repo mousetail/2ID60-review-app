@@ -32,14 +32,21 @@ def course(request, code):
 
 @login_required
 def review(request, code):
+
+    slots = Timeslot.objects.filter(course__id__iexact=code)
+    gys = [(i.quartile, i.letter) for i in slots]
+    gys = set(gys)
+    gys2 = [(str(i[0])+","+str(i[1]), "Q"+str(i[0])+" timeslot "+str(i[1])) for i in gys]
+
     if request.method == "POST":
-        form = ReviewForm(request.POST)
+        form = ReviewForm(gys2, request.POST)
         if form.is_bound and form.is_valid():
             cleaned = form.cleaned_data
             timeslots = Timeslot.objects.filter(
+                course__id__iexact=code).filter(
                 year=cleaned["year"]).filter(
-                letter=cleaned["letter"]).filter(
-                quartile=cleaned["quartile"])
+                letter=cleaned["timeslot"][1]).filter(
+                quartile=cleaned["timeslot"][0])
             try:
                 slot0 = timeslots[0]
             except IndexError:
@@ -62,7 +69,7 @@ def review(request, code):
                 return HttpResponseRedirect("..")
 
     else:
-        form = ReviewForm()
+        form = ReviewForm(gys2)
     return render(request, "tureview/review.html", {"form": form})
 
 
