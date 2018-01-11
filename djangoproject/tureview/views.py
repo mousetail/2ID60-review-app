@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from .models import Review, Course, Student
 from .forms import RegistrationForm
@@ -16,12 +17,14 @@ def search(request):
                                                     "quartiles": [(i, "Q"+str(i)) for i in range(1,5)]})
 
 
-def course(request, code=""):
+def course(request, code):
+    course = Course.objects.filter(id__iexact=code) # not working yet
     #reviews = Review.objects.filter(id__iexact=code).order_by('date')
     reviews = Review.objects.order_by('date')
-    return render(request, "tureview/course.html", {'reviews': reviews})
+    return render(request, "tureview/course.html",
+        {'course': course, 'reviews': reviews})
 
-
+@login_required
 def review(request):
     return render(request, "tureview/review.html")
 
@@ -54,5 +57,8 @@ def register(request):
             form.add_error("password_2", "Passwords do not match")
     return render(request, "registration/register.html", {"form": form})
 
+
+@login_required
 def profile(request):
-    return render(request, "tureview/profile.html")
+    reviews = Review.objects.filter(student=request.user.student)
+    return render(request, "tureview/profile.html", {'reviews': reviews})

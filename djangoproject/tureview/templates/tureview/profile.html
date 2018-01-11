@@ -4,7 +4,18 @@
 {% block content %}
 <section class="page-section cta">
     <div class="container">
-        <h1>Profile page</h1>
+        <h1>Welcome, {{ user.get_username }}</h1>
+        <p>
+          <b>Bachelor: </b> {{ user.student.get_major_display }}<br>
+
+        </p>
+        <p>
+          {% for review in reviews %}
+
+
+          {% endfor %}
+        </p>
+
     </div>
 </section>
 {% endblock %}
