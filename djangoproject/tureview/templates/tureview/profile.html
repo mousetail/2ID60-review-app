@@ -4,18 +4,28 @@
 {% block content %}
 <section class="page-section cta">
     <div class="container">
-        <h1>Welcome, {{ user.get_username }}</h1>
-        <p>
-          <b>Bachelor: </b> {{ user.student.get_major_display }}<br>
+      <div class="row">
+        <div class="col-12">
+          <h1>Welcome, {{ user.get_username }}</h1>
+          <p>
+            <b>Bachelor: </b> {{ user.student.get_major_display }}<br>
 
-        </p>
-        <p>
-          {% for review in reviews %}
-
-
-          {% endfor %}
-        </p>
-
+          </p>
+        </div>
+        {% for review in reviews %}
+        <div class="col-12">
+          <p>
+            <b>Course: </b> {{ review.course }} <br>
+            <b>Timeslot: </b> {{ review.timeslot }} <br>
+            <b>Posted on: </b> {{ review.date }} <br>
+            {{ review.reviewShort }}
+            <br>
+            {{ review.reviewLong }}
+          </p>
+        <div>
+        {% endfor %}
+        </div>
+      </div>
     </div>
 </section>
 {% endblock %}
