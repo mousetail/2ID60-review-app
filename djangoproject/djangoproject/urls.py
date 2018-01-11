@@ -19,4 +19,4 @@ urlpatterns = [
         name='logout'),
     url(r'^accounts/register$', tuview.register),
     url(r'^api/search$', turest.search)
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

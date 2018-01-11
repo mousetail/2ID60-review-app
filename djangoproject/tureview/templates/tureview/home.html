@@ -2,13 +2,74 @@
 {% load static %}
 
 {% block content %}
-<section>
+<!-- This section will give a small explanation with just text and a button to go to search for a course -->
+<section class="page-section cta">
   <div class="container">
-    <div class="row">
-      <h1>Welcome to TUreview</h1>
-      <button class="btn btn-primary col-12">Click here for reviews</button>
-      <button class="btn btn-secondary col-12">Click here to write a review</button>
+    <div class="row center">
+      <h1 class="center">Welcome to TUreview</h1>
+      <p class="center">Korte uitleg van wat de bedoeling is van deze site. Er komt hier een uitleg, met search button voor vakken eventueel de hoogst gerate vakken hieronder weergeven voor de funsies </p>
+      <a class="btn btn-primary btn-xl center" href="search.html">Click to search for a course</a>
     </div>
   </div>
+</section>
+
+<!-- This section will show a video of us with the application -->
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h1 class="center">Help video</h1>
+          <p class="center" width="100%"> here we show a video with explanation for how to use this application </p>
+          <video class="center" src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-1/lesson-2/htmlcss1-vid_brown-bear.mp4" width="100%" height="100%" controls>
+          Video not supported </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- This section is the three best rated courses in a list -->
+<section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Best rated course</span>
+                <span class="section-heading-lower text-uppercase text-expanded">2ID60</span>
+              </h2>
+              <p class="mb-0"> Review of the course:</p>
+              <p class="italic">we really loved it, totally the best thing to do in your spare time. count on a shitload of work though</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Second best rated course</span>
+                <span class="section-heading-lower">0HV90</span>
+              </h2>
+              <p class="mb-0"> Review of the course:</p>
+              <p class="italic">working together on this ogo gives you much needed hands on experience for later statistical testing</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Third best rated course</span>
+                <span class="section-heading-lower">0HV100</span>
+              </h2>
+              <p class="mb-0"> Review of the course:</p>
+              <p class="italic">Course itself is boring and almost identical to hti 2ID40, but therefore easy ects</p></div>
+          </div>
+        </div>
+      </div>
 </section>
 {% endblock %}
