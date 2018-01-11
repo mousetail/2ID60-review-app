@@ -6,17 +6,26 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1>Welcome, {{ user.get_username }}</h1>
+          <h1>{{ user.username }} </h1>
           <p>
-            <b>Bachelor: </b> {{ user.student.get_major_display }}<br>
-
+            <i>apache</i> <br> <!-- male/female not working -->
+            <b>Bachelor: </b> {{ student.get_major_display }} <br>
+            <b>Start year: </b> {{ student.startYear }} <br>
+            <b>Thumbs up: </b> !NOT WORKING! <br> <!-- not working -->
+            <b>Thumbs down: </b> !NOT WORKING! <br> <!-- not working -->
+            <b>Total reviews: </b> {{ reviews.count }} <br>
           </p>
         </div>
+        <div class="row">
+          <div class="col-12">
+            <h1>Reviews of {{ user.username }} </h1>
         {% for review in reviews %}
-        <div class="col-12">
+        <div class="col-12 jumbotron">
           <p>
-            <b>Course: </b> {{ review.course }} <br>
-            <b>Timeslot: </b> {{ review.timeslot }} <br>
+            <b>Grade: </b> !NOT WORKING! <br>
+            <b>Course: </b> {{ review.timeslot.course }} <br>
+            <b>Year: </b> {{ review.timeslot.year }} <br>
+            <b>Timeslot: </b> Q{{ review.timeslot.quartile }} {{ review.timeslot.letter }} <br>
             <b>Posted on: </b> {{ review.date }} <br>
             {{ review.reviewShort }}
             <br>

@@ -62,6 +62,9 @@ class Student(models.Model):
         ('id', 'Industrial Design')
     )
     major = models.CharField(max_length=16, choices=MAJOR_OPTIONS)
+    #THUMBS UP
+    #THUMBS DOWN
+    #MALE/FEMALE/APACHE???
 
     def __str__(self):
         return self.user.username
@@ -73,3 +76,6 @@ class Review(models.Model):
     reviewLong = models.TextField()
     date = models.DateField(default=timezone.now)
     timeslot = models.ForeignKey(Timeslot)
+    #GRADE
+    #THUMBS UP
+    #THUMBS DOWN
