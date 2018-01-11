@@ -3,21 +3,25 @@
 
 {% block content %}
 <section class="page-section cta">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <div class="cta-inner text-center rounded">
-          <h1> {{ course.name }} </h1> <!-- course not working -->
-          {% for review in reviews %}
-          <div class="col-12 col-md-6">
-            <h5>{{ review.reviewShort }}</h5>
-            <p>{{ review.reviewLong }}</p>
-            <p>date: <b>{{ review.date }}</p>
-          </div>
-          {% endfor %}
+    <div class="container">
+        <h1> {{course.id}} {{ course.name }} </span></h1><span class="faculty"> {{ course.get_faculty_display }}</span>
+        <div>
+            {{ reviews|length }} reviews found, would you like to <a href="review">write a new review for {{course.id}}</a>
         </div>
-      </div>
+        <p> {{ course.descriptionLong }}</p>
+        {% for review in reviews %}
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h5>{{ review.reviewShort }}</h5>
+                    <p>{{ review.reviewLong }}</p>
+                    <p>date: <b>{{ review.date }}</b></p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <i>No reviews for this course found, would you like to <a href="review">write a review?</a></i>
+        {% endfor %}
     </div>
-  </div>
 </section>
 {% endblock %}

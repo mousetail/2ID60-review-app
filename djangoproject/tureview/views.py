@@ -18,9 +18,12 @@ def search(request):
 
 
 def course(request, code):
-    course = Course.objects.filter(id__iexact=code) # not working yet
-    #reviews = Review.objects.filter(id__iexact=code).order_by('date')
-    reviews = Review.objects.order_by('date')
+    code = code.upper()
+    try:
+        course = Course.objects.get(id__iexact=code)
+    except Course.DoesNotExist:
+        return HttpResponse("course \""+str(code)+"\" does not exist")
+    reviews = Review.objects.filter(course=course).order_by('date')
     return render(request, "tureview/course.html",
         {'course': course, 'reviews': reviews})
 
