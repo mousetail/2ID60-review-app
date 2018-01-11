@@ -7,6 +7,14 @@ body {
   background-position: center;
   background-size: auto;
 }
+button.res {
+    background-color: #F75A5E;
+    width: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 h1,
 h2,
@@ -22,7 +30,11 @@ p {
   line-height: 1.75;
   width:100%;
   font-family: signika negative;
-  
+
+}
+
+.full {
+  width:100%;
 }
 
 .center {
