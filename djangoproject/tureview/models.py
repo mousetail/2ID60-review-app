@@ -69,7 +69,6 @@ class Student(models.Model):
 
 class Review(models.Model):
     student = models.ForeignKey(Student)
-    course = models.ForeignKey(Course)
     reviewShort = models.CharField(max_length=200)
     reviewLong = models.TextField()
     date = models.DateField(default=timezone.now)

@@ -3,8 +3,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
-from .models import Review, Course, Student
-from .forms import RegistrationForm
+from django.utils import timezone
+from .models import Review, Course, Student, Timeslot
+from .forms import RegistrationForm, ReviewForm
+
 
 def home(request):
     return render(request, "tureview/home.html")
@@ -13,8 +15,8 @@ def home(request):
 def search(request):
     faculties = Course.FACULTY_OPTIONS
     return render(request, "tureview/search.html", {"faculties": faculties,
-                                                    "letters": [(i,i.upper()) for i in 'abcdex'],
-                                                    "quartiles": [(i, "Q"+str(i)) for i in range(1,5)]})
+                                                    "letters": [(i, i.upper()) for i in 'abcdex'],
+                                                    "quartiles": [(i, "Q" + str(i)) for i in range(1, 5)]})
 
 
 def course(request, code):
@@ -22,14 +24,46 @@ def course(request, code):
     try:
         course = Course.objects.get(id__iexact=code)
     except Course.DoesNotExist:
-        return HttpResponse("course \""+str(code)+"\" does not exist")
-    reviews = Review.objects.filter(course=course).order_by('date')
+        return HttpResponse("course \"" + str(code) + "\" does not exist")
+    reviews = Review.objects.filter(timeslot__course=course).order_by('date')
     return render(request, "tureview/course.html",
-        {'course': course, 'reviews': reviews})
+                  {'course': course, 'reviews': reviews})
+
 
 @login_required
-def review(request):
-    return render(request, "tureview/review.html")
+def review(request, code):
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_bound and form.is_valid():
+            cleaned = form.cleaned_data
+            timeslots = Timeslot.objects.filter(
+                year=cleaned["year"]).filter(
+                letter=cleaned["letter"]).filter(
+                quartile=cleaned["quartile"])
+            try:
+                slot0 = timeslots[0]
+            except IndexError:
+                form.add_error("letter", "The course "+str(code)+" was not offered in this year, quartile and timeslot")
+                slot0 = None
+
+            if slot0:
+                assert slot0, repr(slot0)
+
+                student = Student.objects.get(user = request.user)
+
+                review = Review()
+                review.date = timezone.now()
+                review.reviewLong = cleaned["content"]
+                review.reviewShort = cleaned["summary"]
+                review.student = student
+                review.timeslot = slot0
+                review.save()
+
+                return HttpResponseRedirect("..")
+
+    else:
+        form = ReviewForm()
+    return render(request, "tureview/review.html", {"form": form})
 
 
 def register(request):
