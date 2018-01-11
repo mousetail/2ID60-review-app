@@ -23,6 +23,7 @@ $("#searchform").on("submit", function(ev) {
                         $(copy).css("display", "")
                         $(copy).attr("id", "cTemplate"+index)
                         $("#cID", copy).text(data[index].id);
+                        $("#link", copy).attr("href", "/course/"+data[index].id)
                         $("#cName", copy).text(data[index].name);
                         $("#cShortDesc", copy).text(data[index].shortDesc);
                         $("#cLongDesc", copy).text(data[index].longDesc);
