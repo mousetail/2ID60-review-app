@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.db.models import Avg
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.utils import timezone
@@ -50,13 +51,13 @@ def review(request, code):
             try:
                 slot0 = timeslots[0]
             except IndexError:
-                form.add_error("letter", "The course "+str(code)+" was not offered in this year, quartile and timeslot")
+                form.add_error("timeslot", "The course "+str(code)+" was not offered in this year, quartile and timeslot")
                 slot0 = None
 
             if slot0:
                 assert slot0, repr(slot0)
 
-                student = Student.objects.get(user = request.user)
+                student = Student.objects.get(user=request.user)
 
                 review = Review()
                 review.date = timezone.now()
@@ -64,7 +65,18 @@ def review(request, code):
                 review.reviewShort = cleaned["summary"]
                 review.student = student
                 review.timeslot = slot0
+                review.ratingOverall = cleaned["rating"]
                 review.save()
+
+                try:
+                    course = Course.objects.get(id__iexact=code)
+                except Course.DoesNotExist:
+                    return HttpResponse("unexpeted database error (course appears to be deleted")
+
+                average = Review.objects.filter(timeslot__course = course).aggregate(
+                    Avg('ratingOverall'))["ratingOverall__avg"]
+                course.averageRating = average
+                course.save()
 
                 return HttpResponseRedirect("..")
 

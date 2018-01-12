@@ -6,7 +6,8 @@
     <div class="container">
         <h1> {{course.id}} {{ course.name }} </span></h1><span class="faculty"> {{ course.get_faculty_display }}</span>
         <div>
-            {{ reviews|length }} reviews found, would you like to <a href="review">write a new review for {{course.id}}</a>
+            {{ reviews|length }} reviews found (average rating: {{ course.getAverage }})
+            , would you like to <a href="review">write a new review for {{course.id}}</a>
         </div>
         <p> {{ course.descriptionLong }}</p>
         {% for review in reviews %}
@@ -14,6 +15,7 @@
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner text-center rounded">
                     <h5>{{ review.reviewShort }}</h5>
+                    <div>Rating: {{review.ratingOverall}}</div>
                     <p>{{ review.reviewLong }}</p>
                     <p>date: <b>{{ review.date }}</b></p>
                 </div>
