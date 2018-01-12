@@ -54,7 +54,38 @@ p.italic {
 .tcgrey {
   color: rgba(255, 255, 255, 0.3);
 }
-
+.text-primary {
+  color #e6a756 !important
+}
+.login{
+  font-family: signika;
+  display:inline-block;
+  margin-bottom: 4px;
+}
+.btn-xl {
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.bg-primary {
+  background-color: #e6a756 !important;
+}
+.btn {
+  box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
+}
+.btn-primary {
+  background-color: #365158;
+  border-color: #365158;
+  font-weight: 400;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: #365158;
+  border-color: #365158;
+  color: rgb(255, 59, 63);
+}
 /* end to make life easier*/
 
 
