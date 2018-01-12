@@ -9,10 +9,11 @@ from . import models
 def search(request):
     # code, facultijd, jaar, quartiel, tijdslot
     code = request.POST.get("code", "")
-    facultijd = request.POST.get("fac", "")
+    faculty = request.POST.get("fac", "")
     cname = request.POST.get("name", "")
     year = request.POST.get("year", "0")
     quartile = request.POST.get("quartile", "-1")
+    minRating = request.POST.get("minRating", "0")
     if quartile != "":
         quartile = int(quartile)
     else:
@@ -21,10 +22,14 @@ def search(request):
         year = int(year)
     else:
         year = 0
+    if minRating != "":
+        minRating = float(minRating)
+    else:
+        minRating = 0
     timeslot = request.POST.get("slot", "")
 
     error = ""
-    results = ["2ID60"]
+    results = []
     if code != "":
         try:
             results = [models.Course.objects.get(id=code)]
@@ -33,10 +38,12 @@ def search(request):
 
     else:
         courses = models.Course.objects.all()
-        if facultijd != "":
-            courses = courses.filter(faculty=facultijd)
+        if faculty != "":
+            courses = courses.filter(faculty=faculty)
         if cname != "":
             courses = courses.filter(name__icontains=cname)
+        if minRating > 0:
+            courses = courses.filter(averageRating__gte=minRating)
         timeslots = models.Timeslot.objects.all()
         timeslots = timeslots.filter(course__in=courses)
         if year != 0:
