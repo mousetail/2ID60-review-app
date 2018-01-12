@@ -1,3 +1,12 @@
+/* uitklapfunctie voor form*/
+$(document).ready(function() {
+        $(".text").hide();
+        $(".expand").click(function() {
+                $(this).next(".text").slideToggle(500);
+                $(this).text($(this).text() == 'Less filters' ? 'More filters' : 'Less filters').toggleClass('up');
+        });
+});
+
 $("#searchform").on("submit", function(ev) {
     ev.preventDefault();
     var value = $("#idfield").val();
@@ -12,7 +21,9 @@ $("#searchform").on("submit", function(ev) {
                    "fac": $("#facfield").val(),
                    "name": $("#namefield").val(),
                    "slot": $("#timeslotfield").val(),
-                   "quartile": $("#quartilefield").val()
+                   "quartile": $("#quartilefield").val(),
+                   "minRating": $("#minratingfield").val(),
+                   "sort": $("#sortfield").val()
                    }
             }).done(
                 function(data) {
@@ -23,9 +34,16 @@ $("#searchform").on("submit", function(ev) {
                         $(copy).css("display", "")
                         $(copy).attr("id", "cTemplate"+index)
                         $("#cID", copy).text(data[index].id);
+                        $("#link", copy).attr("href", "/course/"+data[index].id)
                         $("#cName", copy).text(data[index].name);
                         $("#cShortDesc", copy).text(data[index].shortDesc);
                         $("#cLongDesc", copy).text(data[index].longDesc);
+                        if (Number(data[index].numReviews) > 0){
+                            $("#cAvgRat", copy).text(data[index].avgRating + " ("+data[index].numReviews+" reviews)");
+                        }
+                        else {
+                            $("#cAvgRat", copy).text("no reviews")
+                        }
 
                         for (var year in data[index].years){
                             var yearCopy = $("#yearTemplate").clone();

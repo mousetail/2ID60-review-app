@@ -1,0 +1,17 @@
+{% extends 'tureview/base.html' %}
+{% load static %}
+
+{% block title %} Review {% endblock %}
+
+{% block content %}
+<section class="page-section cta">
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="submit" />
+        </form>
+    </div>
+</section>
+{% endblock %}

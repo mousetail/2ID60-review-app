@@ -17,6 +17,8 @@ class Course(models.Model):
     name = models.CharField(max_length=199)
     descriptionShort = models.CharField(max_length=200)
     descriptionLong = models.TextField()
+    averageRating = models.FloatField()
+    reviewNumber= models.IntegerField(default=0)
 
     FACULTY_OPTIONS = (
         ('BMT', 'Biomedishe Technologie'),
@@ -24,6 +26,7 @@ class Course(models.Model):
         ('ESoE', 'Eindhoven School of Education'),
         ('EE', 'Electrical Engineering'),
         ('ID', 'Industrial Design'),
+        ('TUE', 'Technische Universiteit Eindhoven'),
         ('IEID', 'Industrial Engineering & Innovation Sciences'),
         ('ST', 'Scheikundige Technologie'),
         ('TN', 'Technishe Natuurkunde'),
@@ -36,6 +39,9 @@ class Course(models.Model):
 
     def __str__(self):
         return self.id + " "+self.name
+
+    def getAverage(self):
+        return "{0:.1f}".format(self.averageRating)
 
 
 class Timeslot(models.Model):
@@ -61,15 +67,24 @@ class Student(models.Model):
         ('id', 'Industrial Design')
     )
     major = models.CharField(max_length=16, choices=MAJOR_OPTIONS)
+    #THUMBS UP
+    #THUMBS DOWN
+    #MALE/FEMALE/APACHE???
 
     def __str__(self):
         return self.user.username
 
 
 class Review(models.Model):
+    thumbsUp = models.ManyToManyField(Student, related_name="thumbsUp")
+    thumbsDown = models.ManyToManyField(Student, related_name="thumbsDown")
     student = models.ForeignKey(Student)
-    course = models.ForeignKey(Course)
     reviewShort = models.CharField(max_length=200)
     reviewLong = models.TextField()
     date = models.DateField(default=timezone.now)
     timeslot = models.ForeignKey(Timeslot)
+
+    ratingOverall = models.IntegerField(default=5)
+    #GRADE
+    #THUMBS UP
+    #THUMBS DOWN

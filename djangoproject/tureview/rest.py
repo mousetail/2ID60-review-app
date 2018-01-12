@@ -9,10 +9,14 @@ from . import models
 def search(request):
     # code, facultijd, jaar, quartiel, tijdslot
     code = request.POST.get("code", "")
-    facultijd = request.POST.get("fac", "")
+    faculty = request.POST.get("fac", "")
     cname = request.POST.get("name", "")
     year = request.POST.get("year", "0")
     quartile = request.POST.get("quartile", "-1")
+    minRating = request.POST.get("minRating", "0")
+
+    sortfunc = request.POST.get("sort", "id")
+
     if quartile != "":
         quartile = int(quartile)
     else:
@@ -21,10 +25,14 @@ def search(request):
         year = int(year)
     else:
         year = 0
+    if minRating != "":
+        minRating = float(minRating)
+    else:
+        minRating = 0
     timeslot = request.POST.get("slot", "")
 
     error = ""
-    results = ["2ID60"]
+    results = []
     if code != "":
         try:
             results = [models.Course.objects.get(id=code)]
@@ -33,10 +41,12 @@ def search(request):
 
     else:
         courses = models.Course.objects.all()
-        if facultijd != "":
-            courses = courses.filter(faculty=facultijd)
+        if faculty != "":
+            courses = courses.filter(faculty=faculty)
         if cname != "":
             courses = courses.filter(name__icontains=cname)
+        if minRating > 0:
+            courses = courses.filter(averageRating__gte=minRating)
         timeslots = models.Timeslot.objects.all()
         timeslots = timeslots.filter(course__in=courses)
         if year != 0:
@@ -64,12 +74,21 @@ def search(request):
                     else:
                         quartile[result.quartile] = [result.letter]
                 else:
-                    slots[result.year] = {results.quartile: [result.letter]}
+                    slots[result.year] = {result.quartile: [result.letter]}
             else:
                 output[result.course.id] = {"id": result.course.id, "shortDesc": result.course.descriptionShort,
-                       "longDest": result.course.descriptionLong,
+                       "longDest": result.course.descriptionLong, "avgRating": result.course.getAverage(),
+                        "numReviews": result.course.reviewNumber,
                         "name": result.course.name, "years": {result.year: {result.quartile: [result.letter]}}}
         output = list(output.values())
-        output.sort(key=lambda x: x["id"])
+        sortfuncs = {"id": lambda x: x["id"],
+                     "name": lambda x: x["name"],
+                     "rating": lambda x: 10 - float(x["avgRating"]),
+                     "number": lambda x: -x["numReviews"]}
+        output.sort(key=sortfuncs[sortfunc])
+
 
     return HttpResponse(json.dumps(output), content_type="application/json")
+
+def thumbs(request):
+    pass

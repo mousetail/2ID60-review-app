@@ -6,8 +6,37 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: auto;
+  position:relative;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+button.res {
+    background-color: #F75A5E;
+    width: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/* text and expand below for uitklapfunctie in forms*/
+.text {
+        display:none;
+        width:461px;
+        margin:15px 0px 15px 0px;
+        padding:10px;
+        border:1px solid #ccc;
+        background-color:#FFF;
+}
+.expand {
+        text-decoration:underline;
+        cursor:hand;
+        cursor:pointer;
 }
 
+::before {
+  position: relative;
+  z-index: -1;
+}
 h1,
 h2,
 h3,
@@ -22,7 +51,11 @@ p {
   line-height: 1.75;
   width:100%;
   font-family: signika negative;
-  
+
+}
+
+.full {
+  width:100%;
 }
 
 .center {
@@ -30,6 +63,7 @@ p {
   margin-right: auto;
   text-align: center;
   font-family: signika;
+
 }
 
 .text-faded {
@@ -242,6 +276,10 @@ p {
 
 .footer {
   background-color: #365158;
+  position: absolute;
+  bottom: 0px;
+  width:100%;
+
 }
 
 .text-primary {

@@ -1,0 +1,16 @@
+{% extends 'tureview/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="page-section cta">
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="login" />
+        </form>
+        <a class="btn btn-primary btn-xl center" href="../register">Register</a>
+    </div>
+</section>
+{% endblock %}
