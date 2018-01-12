@@ -74,3 +74,6 @@ def search(request):
         output.sort(key=lambda x: x["id"])
 
     return HttpResponse(json.dumps(output), content_type="application/json")
+
+def thumbs(request):
+    pass
