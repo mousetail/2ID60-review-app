@@ -87,4 +87,8 @@ def search(request):
                      "number": lambda x: -x["numReviews"]}
         output.sort(key=sortfuncs[sortfunc])
 
-    return HttpResponse(json.dumps(output[:25]), content_type="application/json")
+
+    return HttpResponse(json.dumps(output), content_type="application/json")
+
+def thumbs(request):
+    pass

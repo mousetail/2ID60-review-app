@@ -1,18 +1,12 @@
 {% extends 'tureview/base.html' %}
 {% load static %}
 
+{% block title %} Search {% endblock %}
+
 {% block content %}
 <section class="page-section cta">
   <div class="container">
     <div class="row">
-      <!--<html>
-      <head>
-          <title>tureview</title> -->
-          <script src="{% static 'javascript/jquiry.js' %}" defer></script>
-          <script src="{% static 'javascript/search.js' %}" defer></script>
-      <!--</head>
-      <body> -->
-
 
           <div id="courseTemplate" style="display: none;">
                 <a class="row" href="" id="link">
@@ -96,5 +90,6 @@
     </div>
   </div>
 </section>
+<script src="{% static 'javascript/search.js' %}" defer></script>
 
 {% endblock %}
