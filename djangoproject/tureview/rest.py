@@ -82,5 +82,8 @@ def search(request):
 
     return HttpResponse(json.dumps(output), content_type="application/json")
 
-def thumbs(request):
-    pass
+def thumbs(request, code):
+    if request.method == 'POST':
+        student = Student.objects.get(user=request.user)
+        request.POST.get("upDown", "")
+        
