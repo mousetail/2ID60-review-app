@@ -56,7 +56,7 @@ def review(request, code):
             if slot0:
                 assert slot0, repr(slot0)
 
-                student = Student.objects.get(user = request.user)
+                student = Student.objects.get(user=request.user)
 
                 review = Review()
                 review.date = timezone.now()
