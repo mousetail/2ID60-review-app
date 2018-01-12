@@ -30,6 +30,9 @@
             {{ review.reviewShort }}
             <br>
             {{ review.reviewLong }}
+            <br>
+            <b>Thumbs up: </b> {{ review.thumbsUp.count }} <br>
+            <b>Thumbs down: </b> {{ review.thumbsDown.count }} <br> 
           </p>
         <div>
         {% endfor %}

@@ -71,6 +71,8 @@ class Student(models.Model):
 
 
 class Review(models.Model):
+    thumbsUp = models.ManyToManyField(Student, related_name="thumbsUp")
+    thumbsDown = models.ManyToManyField(Student, related_name="thumbsDown")
     student = models.ForeignKey(Student)
     reviewShort = models.CharField(max_length=200)
     reviewLong = models.TextField()
