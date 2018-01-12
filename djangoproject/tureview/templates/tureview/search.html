@@ -23,12 +23,13 @@
 
       <!-- This is the form above the results -->
       <form id="searchform" method="POST" class="full">
-        <label for="idfield">ID: </label>
-        <input id="idfield" name="courseID"><br>
+        <label for="idfield">Exact course ID: </label>
+        <input id="idfield" class="rounded" name="courseID"><br>
+        <p>When you do not know the exact ID, please use the filters below</p>
 
         <!-- below a drop down menu was made, can be seen in search.js document ready function -->
         <p class="expand">More filters</p>
-        <div class="text rounded">
+        <div class="text rounded searchbox">
           <label for="facfield">Faculty: </label>
           <select id="facfield" name="fac">
             <option value="" selected="selected">any</option>
@@ -65,7 +66,7 @@
               <option value="number">Number of reviews</option>
           </select>
       </div>
-
+      <button type="reset" class="btn btn-primary btn-xl ">reset</button>
       <button type="submit" class="btn btn-primary btn-xl ">submit</button>
   </form>
 

@@ -37,7 +37,7 @@ p {
 /* text is used in js, this will expand below for uitklapfunctie in forms*/
 .text {
         display:none;
-        width:461px;
+        width:100%;
         margin:15px 0px 15px 0px;
         padding:10px;
         border:1px solid #ccc;
@@ -54,6 +54,12 @@ p {
 .full {
   width:100%;
   font-family: signika negative;
+  margin-left: 1rem;
+  margin-right:1rem;
+}
+#idfield{
+  position:relative;
+  width: 200px;
 }
 p.italic {
     font-style: italic;
@@ -156,6 +162,43 @@ p.italic {
   left: -0.5rem;
   right: -0.5rem;
   border: 0.25rem solid rgba(255, 255, 255, 0.85);
+}
+
+.cta-inner-search{
+  position:relative;
+  padding: 3rem;
+  margin: 0rem;
+  background-color: white;
+}
+
+.searchbox{
+  width: 100%
+  margin-right: 0rem;
+  overflow: auto;
+}
+
+#facfield{
+  width:200px;
+}
+
+#namefield{
+  width:210px;
+}
+
+#yearfield{
+  width: 220px;
+}
+#quartilefield{
+  width: 193.5px;
+}
+#timeslotfield{
+  width: 192px;
+}
+#minratingfield{
+  width: 176px;
+}
+#sortfield{
+  width: 204px;
 }
 
 .float-block {
