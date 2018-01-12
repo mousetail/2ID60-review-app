@@ -17,6 +17,7 @@ class Course(models.Model):
     name = models.CharField(max_length=199)
     descriptionShort = models.CharField(max_length=200)
     descriptionLong = models.TextField()
+    averageRating = models.FloatField()
 
     FACULTY_OPTIONS = (
         ('BMT', 'Biomedishe Technologie'),
@@ -37,6 +38,9 @@ class Course(models.Model):
 
     def __str__(self):
         return self.id + " "+self.name
+
+    def getAverage(self):
+        return "{0:.1f}".format(self.averageRating)
 
 
 class Timeslot(models.Model):
