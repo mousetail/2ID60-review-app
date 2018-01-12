@@ -14,6 +14,9 @@ def search(request):
     year = request.POST.get("year", "0")
     quartile = request.POST.get("quartile", "-1")
     minRating = request.POST.get("minRating", "0")
+
+    sortfunc = request.POST.get("sort", "id")
+
     if quartile != "":
         quartile = int(quartile)
     else:
@@ -78,7 +81,12 @@ def search(request):
                         "numReviews": result.course.reviewNumber,
                         "name": result.course.name, "years": {result.year: {result.quartile: [result.letter]}}}
         output = list(output.values())
-        output.sort(key=lambda x: x["id"])
+        sortfuncs = {"id": lambda x: x["id"],
+                     "name": lambda x: x["name"],
+                     "rating": lambda x: 10 - float(x["avgRating"]),
+                     "number": lambda x: -x["numReviews"]}
+        output.sort(key=sortfuncs[sortfunc])
+
 
     return HttpResponse(json.dumps(output), content_type="application/json")
 

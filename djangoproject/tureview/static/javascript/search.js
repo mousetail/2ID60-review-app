@@ -22,7 +22,8 @@ $("#searchform").on("submit", function(ev) {
                    "name": $("#namefield").val(),
                    "slot": $("#timeslotfield").val(),
                    "quartile": $("#quartilefield").val(),
-                   "minRating": $("#minratingfield").val()
+                   "minRating": $("#minratingfield").val(),
+                   "sort": $("#sortfield").val()
                    }
             }).done(
                 function(data) {
