@@ -6,9 +6,6 @@ $(document).ready(function() {
                 $(this).text($(this).text() == 'Less filters' ? 'More filters' : 'Less filters').toggleClass('up');
         });
 });
-$("#searchform").on("reset", function(ev) {
-    document.getElementById("#searchform").reset();
-})
 
 $("#searchform").on("submit", function(ev) {
     ev.preventDefault();
@@ -93,4 +90,8 @@ $("#searchform").on("submit", function(ev) {
                 }
             )
     }
+})
+
+$("#searchform").on("reset", function(ev) {
+    document.getElementById("#searchform").reset();
 })
