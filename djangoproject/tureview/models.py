@@ -81,5 +81,4 @@ class Review(models.Model):
     reviewLong = models.TextField()
     date = models.DateField(default=timezone.now)
     timeslot = models.ForeignKey(Timeslot)
-
     ratingOverall = models.IntegerField(default=5)
