@@ -14,7 +14,6 @@
       <body> -->
 
 
-<!-- Heyyyyy hier moet beneden ipv google de pagina course/id komen te staan, have fun :)-->
           <div id="courseTemplate" style="display: none;">
                 <a class="row" href="" id="link">
                     <div class="col-xl-9 mx-auto">
@@ -40,35 +39,40 @@
               <label for="idfield">ID: </label>
               <input id="idfield" name="courseID"><br>
 
-              <label for="facfield">Faculty: </label>
-              <select id="facfield" name="fac">
-                  <option value="" selected="selected">any</option>
-                  {% for fac in faculties %}
-                  <option value="{{ fac.0 }}">{{ fac.1 }}</option>
-                  {% endfor %}
-              </select><br>
+              <p class="expand">More filters</p>
+              <div class="text rounded">
+                <label for="facfield">Faculty: </label>
+                <select id="facfield" name="fac">
+                    <option value="" selected="selected">any</option>
+                    {% for fac in faculties %}
+                    <option value="{{ fac.0 }}">{{ fac.1 }}</option>
+                    {% endfor %}
+                </select><br>
 
-              <label for="namefield">Name: </label>
-              <input id="namefield"><br>
+                <label for="namefield">Name: </label>
+                <input id="namefield"><br>
 
-              <label for="yearfield">Year: </label>
-              <input id="yearfield" name="year"><br>
+                <label for="yearfield">Year: </label>
+                <input id="yearfield" name="year"><br>
 
-              <label for="quartilefield">Quartile: </label>
-              <select id="quartilefield" name="quartile">
-                  <option value="" selected="selected">any</option>
-                  {% for q in quartiles %}
-                      <option value="{{ q.0 }}">{{ q.1 }}</option>
-                  {% endfor %}
-              </select><br>
+                <label for="quartilefield">Quartile: </label>
+                <select id="quartilefield" name="quartile">
+                    <option value="" selected="selected">any</option>
+                    {% for q in quartiles %}
+                        <option value="{{ q.0 }}">{{ q.1 }}</option>
+                    {% endfor %}
+                </select><br>
 
-              <label for="timeslotfield">Timeslot: </label>
-              <select id="timeslotfield" name="timeslot">
-                  <option value="" selected="selected">any</option>
-                  {% for lt in letters %}
-                      <option value="{{ lt.0 }}">{{ lt.1 }}</option>
-                  {% endfor %}
-              </select><br>
+                <label for="timeslotfield">Timeslot: </label>
+                <select id="timeslotfield" name="timeslot">
+                    <option value="" selected="selected">any</option>
+                    {% for lt in letters %}
+                        <option value="{{ lt.0 }}">{{ lt.1 }}</option>
+                    {% endfor %}
+                </select><br>
+              </div>
+
+
 
               <button type="submit" class="btn btn-primary btn-xl center">submit</button>
           </form>

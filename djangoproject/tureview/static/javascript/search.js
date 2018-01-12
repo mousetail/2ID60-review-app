@@ -1,3 +1,12 @@
+/* uitklapfunctie voor form*/
+$(document).ready(function() {
+        $(".text").hide();
+        $(".expand").click(function() {
+                $(this).next(".text").slideToggle(500);
+                $(this).text($(this).text() == 'Less filters' ? 'More filters' : 'Less filters').toggleClass('up');
+        });
+});
+
 $("#searchform").on("submit", function(ev) {
     ev.preventDefault();
     var value = $("#idfield").val();
