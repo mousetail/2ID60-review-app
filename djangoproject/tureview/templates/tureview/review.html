@@ -1,12 +1,15 @@
+<!-- First base.html will be loaded and the block content will be placed in the base page -->
 {% extends 'tureview/base.html' %}
 {% load static %}
 
+<!-- Used for the title in base.html -->
 {% block title %} Review {% endblock %}
 
 {% block content %}
 <section class="page-section cta">
     <div class="container">
         <form method="post">
+          <!-- Load from forms.py in combi with views.py. Erik knows how to get this in html, low priority-->
             {% csrf_token %}
             {{ form.as_p }}
 

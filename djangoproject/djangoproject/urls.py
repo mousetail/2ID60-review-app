@@ -18,7 +18,7 @@ urlpatterns = [
     url(r'^accounts/logout/$', authviews.logout, {'next_page': '/'},
         name='logout'),
     url(r'^accounts/register$', tuview.register, name='register'),
-    url(r'^accounts/profile/$', tuview.profile, name='profile'), 
+    url(r'^accounts/profile/$', tuview.profile, name='profile'),
     url(r'^accounts/profile/(?P<username>.+)$', tuview.userprofile, name='userprofile'),
     url(r'^api/search$', turest.search)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
