@@ -13,6 +13,7 @@ def search(request):
     cname = request.POST.get("name", "")
     year = request.POST.get("year", "0")
     quartile = request.POST.get("quartile", "-1")
+    minRating = request.POST.get("minRating", "0")
     if quartile != "":
         quartile = int(quartile)
     else:
@@ -21,10 +22,14 @@ def search(request):
         year = int(year)
     else:
         year = 0
+    if minRating != "":
+        minRating = float(minRating)
+    else:
+        minRating = 0
     timeslot = request.POST.get("slot", "")
 
     error = ""
-    results = ["2ID60"]
+    results = []
     if code != "":
         try:
             results = [models.Course.objects.get(id=code)]
@@ -37,6 +42,8 @@ def search(request):
             courses = courses.filter(faculty=facultijd)
         if cname != "":
             courses = courses.filter(name__icontains=cname)
+        if minRating > 0:
+            courses = courses.filter(averageRating__gte=minRating)
         timeslots = models.Timeslot.objects.all()
         timeslots = timeslots.filter(course__in=courses)
         if year != 0:

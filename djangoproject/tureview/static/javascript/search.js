@@ -21,7 +21,8 @@ $("#searchform").on("submit", function(ev) {
                    "fac": $("#facfield").val(),
                    "name": $("#namefield").val(),
                    "slot": $("#timeslotfield").val(),
-                   "quartile": $("#quartilefield").val()
+                   "quartile": $("#quartilefield").val(),
+                   "minRating": $("#minratingfield").val()
                    }
             }).done(
                 function(data) {
