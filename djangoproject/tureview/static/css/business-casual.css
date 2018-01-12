@@ -15,7 +15,25 @@ button.res {
     margin-right: auto;
     margin-left: auto;
 }
+/* text and expand below for uitklapfunctie in forms*/
+.text {
+        display:none;
+        width:461px;
+        margin:15px 0px 15px 0px;
+        padding:10px;
+        border:1px solid #ccc;
+        background-color:#FFF;
+}
+.expand {
+        text-decoration:underline;
+        cursor:hand;
+        cursor:pointer;
+}
 
+::before {
+  position: relative;
+  z-index: -1;
+}
 h1,
 h2,
 h3,
@@ -42,6 +60,7 @@ p {
   margin-right: auto;
   text-align: center;
   font-family: signika;
+
 }
 
 .text-faded {
