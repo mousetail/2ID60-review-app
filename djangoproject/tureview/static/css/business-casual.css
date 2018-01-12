@@ -52,7 +52,10 @@ p.italic {
     font-style: italic;
 }
 .tcgrey {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgb(64,64,64);
+}
+.tsmall {
+  font-size: 10px;
 }
 .text-primary {
   color #e6a756 !important
