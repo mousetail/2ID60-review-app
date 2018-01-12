@@ -101,8 +101,15 @@ def register(request):
             form.add_error("password_2", "Passwords do not match")
     return render(request, "registration/register.html", {"form": form})
 
-
-@login_required
+# Please don't remove
+'''@login_required
 def profile(request):
     reviews = Review.objects.filter(student=request.user.student)
     return render(request, "tureview/profile.html", {'reviews': reviews})
+'''
+
+def userprofile(request, username):
+    user = User.objects.get(username=username) # kan vast eleganter
+    student = Student.objects.get(user=user)
+    reviews = Review.objects.filter(student=student)
+    return render(request, "tureview/profile.html", {'user': user, 'student': student, 'reviews': reviews})
