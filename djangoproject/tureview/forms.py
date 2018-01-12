@@ -17,7 +17,7 @@ class RegistrationForm(dforms.Form):
         validate_password(password)
         return password
 
-
+# uses widget starWidget.html (this can be used to prettify the for now 0's to make them stars)
 class ReviewForm(dforms.Form):
     def __init__(self, timeSlotOptions, *args, **kwargs):
         dforms.Form.__init__(self, *args, **kwargs)

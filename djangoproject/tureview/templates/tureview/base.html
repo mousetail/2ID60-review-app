@@ -18,137 +18,69 @@
   integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
   crossorigin="anonymous" rel="stylesheet">
 
-
-  <!-- Link new fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Signika|Signika+Negative" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
-
-
-
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="/static/css/business-casual.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Navigation bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand mb-0 h1" href="/">TuReview</a>
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'search' %}">Search</a>
-      </li>
-    </ul>
-    <!-- font awesome moet nog gefixed worden -->
-    {% if not request.user.is_authenticated %}
-     <ul class="navbar-nav my-2 my-lg-0">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'register' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-      </li>
-    </ul>
-    {% endif %}
-    {% if request.user.is_authenticated %}
-    <ul class="navbar-nav my-2 my-lg-0">
-     <li class="nav-item">
-       <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i> Your Account</a>
-     </li>
-     <li class="nav-item">
-       <a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Log-out</a>
-     </li>
-   </ul>
-    {% endif %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand mb-0 h1" href="/">TuReview</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'search' %}">Search</a>
+        </li>
+      </ul>
+      <!-- font awesome moet nog gefixed worden -->
+      {% if not request.user.is_authenticated %}
+       <ul class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+        </li>
+      </ul>
+      {% endif %}
+      {% if request.user.is_authenticated %}
+      <ul class="navbar-nav my-2 my-lg-0">
+       <li class="nav-item">
+         <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i> Your Account</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Log-out</a>
+       </li>
+     </ul>
+      {% endif %}
 
 
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Navigation Oud
-  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Menu</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="/">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'search' %}">Search</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <i class="fa fa-sign-in" aria-hidden="true"></i>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-
+<!-- In here all the other pages will be loaded -->
   {% block content %}
   {% endblock %}
 
   <!-- Footer section -->
-
-  <footer class="footer text-faded text-center py-5">
+  <footer class="footer tcgrey text-center py-5">
       <div class="container">
         <p class="m-0 small"> &copy; Web technology 2017/2018</p>
       </div>
   </footer>
-  <!--<footer class="bg-dark">
-    <div class="footer-above">
-      <div class="container" style="color: white;">
-        <div class="row bg-dark">
-          <div class="footer-col col-md-4">
-            <h3>About this website</h3>
-            <p>This website is build for the course <i>2ID60 - Web Technology </i> from the
-              <a href="https://www.tue.nl/">Eindhoven University of Technology</a>
-            </p>
-          </div>
-          <div class="footer-col col-md-4">
-            <h3>Terms & Conditions</h3>
-            <p>
-              We do not take any responsility for the content placed on this website
-            </p>
-          </div>
-          <div class="footer-col col-md-4">
-            <h3>Authors</h3>
-            <p>Erik, Tess, Else & Maurits
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="footer-below">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              Copyright &copy; TUreview 2017
-            </div>
-          </div>
-        </div>
-      </div>
-  </footer> -->
 
   <!-- Link JQuery files -->
   <script	src="https://code.jquery.com/jquery-3.2.1.min.js"
 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	crossorigin="anonymous"></script>
-
   <!-- Link Bootstrap JavaScript files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
   integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
@@ -156,9 +88,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
   integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
   crossorigin="anonymous"></script>
-
-  <!-- Link to Font Awesome -->
-  <!--<script src="https://use.fontawesome.com/f64ac32a8b.js"></script>
+  <script src="https://use.fontawesome.com/f64ac32a8b.js"></script>
 
 </body>
 </html>

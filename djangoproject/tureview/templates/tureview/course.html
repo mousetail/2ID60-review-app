@@ -20,11 +20,14 @@
                     <div>Rating: {{review.ratingOverall}}</div>
                     <p>{{ review.reviewLong }}</p>
                     <p>date: <b>{{ review.date }}</b></p>
-                    <button class="btn btn-primary">
-                      <i class="fa fa-thumbs-up"></i>
-                      <i class="fa fa-thumbs-o-up"></i>
+                    <p>thumbs up: <b>{{ review.thumbsUp.count }}</b></p>
+                    <p>thumbs down: <b>{{ review.thumbsDown.count }}</b></p>
+                    <button class="btn btn-primary" id="thumbsUp">
+                      Thumbs Up!
                     </button>
-                    <i class="fa fa-thumbs-up"></i>
+                    <button class="btn btn-primary" id="thumbsDown">
+                      Thumbs Down!
+                    </button>
                 </div>
             </div>
         </div>

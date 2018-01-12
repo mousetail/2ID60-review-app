@@ -18,7 +18,17 @@ button.res {
     margin-right: auto;
     margin-left: auto;
 }
-/* text and expand below for uitklapfunctie in forms*/
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Raleway';
+  width: 100%;
+}
+p {
+  line-height: 1.75;
+  width:100%;
+  font-family: signika negative;
+}
+
+/* text is used in js, this will expand below for uitklapfunctie in forms*/
 .text {
         display:none;
         width:461px;
@@ -32,32 +42,21 @@ button.res {
         cursor:hand;
         cursor:pointer;
 }
+/* and of used in search drop down menu*/
 
-::before {
-  position: relative;
-  z-index: -1;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Raleway';
-  width: 100%;
-}
-
-p {
-  line-height: 1.75;
-  width:100%;
-  font-family: signika negative;
-
-}
-
+/* To make life easier*/
 .full {
   width:100%;
-  font-family: signika negative;
 }
+p.italic {
+    font-style: italic;
+}
+.tcgrey {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* end to make life easier*/
+
 
 .center {
   margin-left: auto;
@@ -66,31 +65,40 @@ p {
   font-family: signika;
 
 }
-
-.text-faded {
-  color: rgba(255, 255, 255, 0.3);
+.footer {
+  background-color: #365158;
+  position: absolute;
+  bottom: 0px;
+  width:100%;
+}
+::before {
+  position: relative;
+  z-index: -1;
+}
+.cta {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(255, 59, 63, 0.8);
+}
+.cta .cta-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 1);
+}
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
 }
 
-.site-heading {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  text-transform: uppercase;
-  line-height: 1;
-  font-family: 'Raleway';
-}
 
-.site-heading .site-heading-upper {
-  display: block;
-  font-size: 2rem;
-  font-weight: 800;
-}
-
-.site-heading .site-heading-lower {
-  font-size: 5rem;
-  font-weight: 100;
-  line-height: 4rem;
-}
-
+/* used in home.html bottom section but besides that useless. */
 .page-section {
   width: 90%;
   margin-top: 3rem;
@@ -98,17 +106,14 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-
 .section-heading {
   text-transform: uppercase;
 }
-
 .section-heading .section-heading-upper {
   display: block;
   font-size: 1rem;
   font-weight: 800;
 }
-
 .section-heading .section-heading-lower {
   display: block;
   font-size: 3rem;
@@ -116,25 +121,20 @@ p {
   font-family: Roboto;
 }
 
-.bg-faded {
-  background-color: rgba(255, 255, 255, 0.85);
-}
 
+/* navbar shizzles */
 #mainNav {
   background-color: #365158;
   font-family: 'Raleway';
 }
-
 #mainNav .navbar-brand {
   color: #365158;
 }
-
 #mainNav .navbar-nav .nav-item .nav-link {
   color: white;
   font-weight: 540;
   font-family: Raleway;
 }
-
 #mainNav .navbar-nav .nav-item.active .nav-link {
   color: rgb(255, 59, 63);
 }
@@ -149,176 +149,4 @@ p {
  #mainNav .navbar-nav .nav-item.active .nav-link:hover {
     color: rgb(255, 59, 63);
   }
-}
-
-.fa .fa-sign-in{
-  position: 312px 300px;
-}
-
-.btn-xl {
-  font-weight: 700;
-  font-size: 0.8rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: 3.6rem;
-}
-
-.login{
-  font-family: signika;
-  display:inline-block;
-  margin-bottom: 4px;
-}
-
-.intro {
-  position: relative;
-}
-
-@media (min-width: 992px) {
-  .intro .intro-img {
-    width: 75%;
-    float: right;
-  }
-  .intro .intro-text {
-    left: 0;
-    width: 60%;
-    margin-top: 3rem;
-    position: absolute;
-  }
-  .intro .intro-text .intro-button {
-    width: 100%;
-    left: 0;
-    position: absolute;
-    bottom: -2rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .intro .intro-text {
-    width: 45%;
-  }
-}
-
-.cta {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: rgba(255, 59, 63, 0.8);
-}
-
-.cta .cta-inner {
-  position: relative;
-  padding: 3rem;
-  margin: 0.5rem;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.cta .cta-inner:before {
-  border-radius: 0.5rem;
-  content: '';
-  position: absolute;
-  top: -0.5rem;
-  bottom: -0.5rem;
-  left: -0.5rem;
-  right: -0.5rem;
-  border: 0.25rem solid rgba(255, 255, 255, 0.85);
-}
-
-@media (min-width: 992px) {
-  .about-heading .about-heading-img {
-    position: relative;
-    z-index: 0;
-  }
-  .about-heading .about-heading-content {
-    margin-top: -5rem;
-    position: relative;
-    z-index: 1;
-  }
-}
-
-@media (min-width: 992px) {
-  .product-item .product-item-title {
-    position: relative;
-    z-index: 1;
-    margin-bottom: -3rem;
-  }
-  .product-item .product-item-img {
-    position: relative;
-    z-index: 0;
-    max-width: 60vw;
-  }
-  .product-item .product-item-description {
-    position: relative;
-    z-index: 1;
-    margin-top: -3rem;
-    max-width: 50vw;
-  }
-}
-
-.list-hours {
-  font-size: 0.9rem;
-}
-
-.list-hours .list-hours-item {
-  border-bottom: 1px solid rgba(230, 167, 86, 0.5);
-  padding-bottom: .25rem;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.list-hours .list-hours-item.today {
-  font-weight: bold;
-  color: #e6a756;
-}
-
-@media (min-width: 992px) {
-  .list-hours {
-    width: 50%;
-    font-size: 1.1rem;
-  }
-}
-
-.address strong {
-  font-size: 1.2rem;
-}
-
-.footer {
-  background-color: #365158;
-  position: absolute;
-  bottom: 0px;
-  width:100%;
-
-}
-
-.text-primary {
-  color: #e6a756 !important;
-}
-
-.bg-primary {
-  background-color: #e6a756 !important;
-}
-
-.btn {
-  box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
-}
-
-.btn-primary {
-  background-color: #365158;
-  border-color: #365158;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background-color: #365158;
-  border-color: #365158;
-  color: rgb(255, 59, 63);
-}
-
-.font-weight-light {
-  font-weight: 100 !important;
-}
-
-p.italic {
-    font-style: italic;
 }

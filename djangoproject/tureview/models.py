@@ -67,8 +67,6 @@ class Student(models.Model):
         ('id', 'Industrial Design')
     )
     major = models.CharField(max_length=16, choices=MAJOR_OPTIONS)
-    #THUMBS UP
-    #THUMBS DOWN
     #MALE/FEMALE/APACHE???
 
     def __str__(self):
@@ -85,6 +83,3 @@ class Review(models.Model):
     timeslot = models.ForeignKey(Timeslot)
 
     ratingOverall = models.IntegerField(default=5)
-    #GRADE
-    #THUMBS UP
-    #THUMBS DOWN
