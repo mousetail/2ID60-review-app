@@ -114,11 +114,11 @@ def register(request):
     return render(request, "registration/register.html", {"form": form})
 
 # Please don't remove
-'''@login_required
+@login_required
 def profile(request):
+    user = request.user
     reviews = Review.objects.filter(student=request.user.student)
     return render(request, "tureview/profile.html", {'reviews': reviews})
-'''
 
 def userprofile(request, username):
     user = User.objects.get(username=username) # kan vast eleganter
