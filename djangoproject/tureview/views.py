@@ -10,7 +10,8 @@ from .forms import RegistrationForm, ReviewForm
 
 
 def home(request):
-    return render(request, "tureview/home.html")
+    topcourses = Course.objects.all().order_by('averageRating')[:3]
+    return render(request, "tureview/home.html", {'topcourses': topcourses})
 
 
 def search(request):

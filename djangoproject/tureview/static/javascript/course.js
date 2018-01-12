@@ -1,12 +1,12 @@
 $(document).ready(() => {
 
-  $('#thumbsUp').on('click', () => {
+  $('.thumbsUp').on('click', () => {
     console.log('Thumbs Up button clicked');
     let value = $('#review-pk').val();
     thumbs('up');
   });
 
-  $('#thumbsDown').on('click', () => {
+  $('.thumbsDown').on('click', () => {
     console.log('Thumbs Up button clicked');
     thumbs('down');
   });
@@ -15,6 +15,8 @@ $(document).ready(() => {
 
 
 function thumbs(upDown) {
+  let review_pk = 
+  console.log("review_pk: " +
   $.ajax({
       url: window.location.href + 'thumbs/',
       type: 'POST',
