@@ -9,11 +9,14 @@ from . import models
 def search(request):
     # code, facultijd, jaar, quartiel, tijdslot
     code = request.POST.get("code", "")
-    facultijd = request.POST.get("fac", "")
+    faculty = request.POST.get("fac", "")
     cname = request.POST.get("name", "")
     year = request.POST.get("year", "0")
     quartile = request.POST.get("quartile", "-1")
     minRating = request.POST.get("minRating", "0")
+
+    sortfunc = request.POST.get("sort", "id")
+
     if quartile != "":
         quartile = int(quartile)
     else:
@@ -38,8 +41,8 @@ def search(request):
 
     else:
         courses = models.Course.objects.all()
-        if facultijd != "":
-            courses = courses.filter(faculty=facultijd)
+        if faculty != "":
+            courses = courses.filter(faculty=faculty)
         if cname != "":
             courses = courses.filter(name__icontains=cname)
         if minRating > 0:
@@ -78,6 +81,10 @@ def search(request):
                         "numReviews": result.course.reviewNumber,
                         "name": result.course.name, "years": {result.year: {result.quartile: [result.letter]}}}
         output = list(output.values())
-        output.sort(key=lambda x: x["id"])
+        sortfuncs = {"id": lambda x: x["id"],
+                     "name": lambda x: x["name"],
+                     "rating": lambda x: 10 - float(x["avgRating"]),
+                     "number": lambda x: -x["numReviews"]}
+        output.sort(key=sortfuncs[sortfunc])
 
-    return HttpResponse(json.dumps(output), content_type="application/json")
+    return HttpResponse(json.dumps(output[:25]), content_type="application/json")
