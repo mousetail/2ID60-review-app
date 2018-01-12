@@ -64,10 +64,11 @@ def search(request):
                     else:
                         quartile[result.quartile] = [result.letter]
                 else:
-                    slots[result.year] = {results.quartile: [result.letter]}
+                    slots[result.year] = {result.quartile: [result.letter]}
             else:
                 output[result.course.id] = {"id": result.course.id, "shortDesc": result.course.descriptionShort,
-                       "longDest": result.course.descriptionLong,
+                       "longDest": result.course.descriptionLong, "avgRating": result.course.getAverage(),
+                        "numReviews": result.course.reviewNumber,
                         "name": result.course.name, "years": {result.year: {result.quartile: [result.letter]}}}
         output = list(output.values())
         output.sort(key=lambda x: x["id"])

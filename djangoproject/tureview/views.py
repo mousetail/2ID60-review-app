@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
-from django.db.models import Avg
+from django.db.models import Avg, Count
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.utils import timezone
@@ -74,8 +74,9 @@ def review(request, code):
                     return HttpResponse("unexpeted database error (course appears to be deleted")
 
                 average = Review.objects.filter(timeslot__course = course).aggregate(
-                    Avg('ratingOverall'))["ratingOverall__avg"]
-                course.averageRating = average
+                    Avg('ratingOverall'), Count('ratingOverall'))
+                course.averageRating = average["ratingOverall__avg"]
+                course.reviewNumber = average["ratingOverall__count"]
                 course.save()
 
                 return HttpResponseRedirect("..")

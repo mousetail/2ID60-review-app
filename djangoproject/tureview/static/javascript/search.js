@@ -36,6 +36,12 @@ $("#searchform").on("submit", function(ev) {
                         $("#cName", copy).text(data[index].name);
                         $("#cShortDesc", copy).text(data[index].shortDesc);
                         $("#cLongDesc", copy).text(data[index].longDesc);
+                        if (Number(data[index].numReviews) > 0){
+                            $("#cAvgRat", copy).text(data[index].avgRating + " ("+data[index].numReviews+" reviews)");
+                        }
+                        else {
+                            $("#cAvgRat", copy).text("no reviews")
+                        }
 
                         for (var year in data[index].years){
                             var yearCopy = $("#yearTemplate").clone();

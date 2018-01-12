@@ -18,6 +18,7 @@ class Course(models.Model):
     descriptionShort = models.CharField(max_length=200)
     descriptionLong = models.TextField()
     averageRating = models.FloatField()
+    reviewNumber= models.IntegerField(default=0)
 
     FACULTY_OPTIONS = (
         ('BMT', 'Biomedishe Technologie'),
