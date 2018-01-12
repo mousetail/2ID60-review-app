@@ -118,8 +118,9 @@ def register(request):
 @login_required
 def profile(request):
     user = request.user
+    student = Student.objects.get(user=user)
     reviews = Review.objects.filter(student=request.user.student)
-    return render(request, "tureview/profile.html", {'reviews': reviews})
+    return render(request, "tureview/profile.html", {'user': user, 'student': student, 'reviews': reviews})
 
 def userprofile(request, username):
     user = User.objects.get(username=username) # kan vast eleganter
