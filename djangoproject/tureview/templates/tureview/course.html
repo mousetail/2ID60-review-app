@@ -16,6 +16,7 @@
         <div class="row">
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner text-center rounded">
+                    <input type="hidden" id="review-pk" value="{{ review.pk }}" />
                     <h5>{{ review.reviewShort }}</h5>
                     <div>Rating: {{review.ratingOverall}}</div>
                     <p>{{ review.reviewLong }}</p>

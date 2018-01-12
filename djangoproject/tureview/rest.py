@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from . import models
+from .models import Student, Review
 
 @csrf_exempt
 def search(request):
@@ -90,8 +91,34 @@ def search(request):
 
     return HttpResponse(json.dumps(output), content_type="application/json")
 
+@csrf_exempt
 def thumbs(request, code):
     if request.method == 'POST':
         student = Student.objects.get(user=request.user)
-        request.POST.get("upDown", "")
-        
+        upDown = request.POST.get("thumbs", "")
+        review_pk = request.POST.get("review_pk", "")
+        review = Review.objects.get(pk=review_pk)
+        rtn = 'none'
+        if upDown == 'up': # student clicked 'up'
+            if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
+                review.thumbsDown.remove(student)
+                review.thumbsUp.add(student)
+                rtn = 'up'
+            elif Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
+                review.thumbsUp.remove(student)
+                rtn = 'none'
+            else:
+                review.thumbsUp.add(student)
+                rtn = 'up'
+        elif upDown == 'down': # student clicked 'down'
+            if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
+                review.thumbsUp.remove(student)
+                review.thumbsDown.add(student)
+                rtn = 'down'
+            elif Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
+                review.thumbsDown.remove(student)
+                rtn = 'none'
+            else:
+                review.thumbsDown.add(student)
+                rtn = 'down'
+        return HttpResponse(json.dumps({"state": rtn}), content_type="application/json")
