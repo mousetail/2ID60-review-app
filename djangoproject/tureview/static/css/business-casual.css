@@ -22,6 +22,11 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Raleway';
   width: 100%;
 }
+
+h1{
+  font-family: Raleway;
+}
+
 p {
   line-height: 1.75;
   width:100%;
@@ -47,6 +52,7 @@ p {
 /* To make life easier*/
 .full {
   width:100%;
+  font-family: signika negative;
 }
 p.italic {
     font-style: italic;
@@ -68,10 +74,12 @@ p.italic {
 .btn-xl {
   font-weight: 700;
   font-size: 0.8rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 3.6rem;
+  
 }
 .bg-primary {
   background-color: #e6a756 !important;
@@ -83,6 +91,8 @@ p.italic {
   background-color: #365158;
   border-color: #365158;
   font-weight: 400;
+  font-family: signika;
+  font-size: 16px;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background-color: #365158;
