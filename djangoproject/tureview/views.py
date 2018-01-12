@@ -50,7 +50,7 @@ def review(request, code):
             try:
                 slot0 = timeslots[0]
             except IndexError:
-                form.add_error("letter", "The course "+str(code)+" was not offered in this year, quartile and timeslot")
+                form.add_error("timeslot", "The course "+str(code)+" was not offered in this year, quartile and timeslot")
                 slot0 = None
 
             if slot0:
@@ -64,6 +64,7 @@ def review(request, code):
                 review.reviewShort = cleaned["summary"]
                 review.student = student
                 review.timeslot = slot0
+                review.ratingOverall = cleaned["rating"]
                 review.save()
 
                 return HttpResponseRedirect("..")
