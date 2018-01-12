@@ -31,6 +31,7 @@ p {
   line-height: 1.75;
   width:100%;
   font-family: signika negative;
+  color: black;
 }
 
 /* text is used in js, this will expand below for uitklapfunctie in forms*/
@@ -57,11 +58,17 @@ p {
 p.italic {
     font-style: italic;
 }
+.tcfgrey {
+  color: rgb(255,255,255,0,3);
+}
 .tcgrey {
   color: rgb(64,64,64);
 }
 .tsmall {
   font-size: 10px;
+}
+.tbig {
+  font-size: 40px;
 }
 .text-primary {
   color #e6a756 !important
@@ -79,7 +86,7 @@ p.italic {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: 3.6rem;
-  
+
 }
 .bg-primary {
   background-color: #e6a756 !important;
@@ -107,7 +114,14 @@ p.italic {
   margin-right: auto;
   text-align: center;
   font-family: signika;
-
+}
+.gradeblock {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: signika;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 .footer {
   background-color: #365158;
@@ -126,7 +140,10 @@ p.italic {
 }
 .cta .cta-inner {
   position: relative;
-  padding: 3rem;
+  padding-top: 20px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+  padding-left: 5px;
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
 }
@@ -141,6 +158,15 @@ p.italic {
   border: 0.25rem solid rgba(255, 255, 255, 0.85);
 }
 
+.float-block {
+  height: auto;
+  width: 70px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin-right: 5%;
+  color: black;
+}
 
 /* used in home.html bottom section but besides that useless. */
 .page-section {
@@ -152,6 +178,7 @@ p.italic {
 }
 .section-heading {
   text-transform: uppercase;
+  color: black;
 }
 .section-heading .section-heading-upper {
   display: block;
