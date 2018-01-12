@@ -116,6 +116,10 @@ p {
   }
 }
 
+.fa .fa-sign-in{
+  position: 312px 300px;
+}
+
 .btn-xl {
   font-weight: 700;
   font-size: 0.8rem;
