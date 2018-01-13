@@ -26,7 +26,7 @@ class ReviewForm(dforms.Form):
         attrs={'placeholder': 'A once-sentence summary of your review'}))
     rating = dforms.IntegerField(label="overall rating", widget=StarWidget())
     content = dforms.CharField(widget=dforms.Textarea())
-    year = dforms.IntegerField(label='year course taken', initial=2000, widget=dforms.NumberInput(
+    year = dforms.IntegerField(label='year course taken', initial=2018, widget=dforms.NumberInput(
         attrs={'min': '1900', 'max': '2500'}
     ))
     timeslot = dforms.ChoiceField(label='quartile taken', choices=())

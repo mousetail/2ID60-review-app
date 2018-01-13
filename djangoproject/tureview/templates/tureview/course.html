@@ -4,7 +4,38 @@
 {% block title %}course {{ course.id }} {% endblock %}
 
 {% block content %}
+
+<!-- section voor laag 1-->
 <section class="page-section cta">
+  <!-- section voor laag 2-->
+  <section style="width:100%; background-color:red; padding:5px;">
+    <!-- div voor laag 2.1-->
+    <div style="width:100%; height:30%; background-color:yellow; padding:5px;">
+      <!-- div voor laag 2.1.1-->
+      <div style="width:70%; float: left; height:100%; background-color:khaki; padding:5px;">
+      </div>
+      <!-- div voor laag 2.1.2-->
+      <div style="width:30%; float: right; height:100%; background-color:lavender; padding:5px;">
+      </div>
+    </div>
+    <!-- div voor laag 2.2-->
+    <div style="width:100%; height:10%; background-color:gold; padding:5px;">
+    </div>
+    <div style="width:100%; height:60%; background-color:goldenrod; padding:5px;">
+    </div>
+  </section>
+  <!-- section voor laag 3-->
+  <section style="width:100%; background-color:white; padding:5px;">
+    <!-- accordion voor laag 3.1-->
+      {% for review in reviews %}
+      <div id="flip"> Ik ben de header
+      </div>
+      <div id="panel"> Ik ben verborgen
+      </div>
+      {% empty %}
+      <i>No reviews for this course found, would you like to <a href="review">write a review?</a></i>
+      {% endfor %}
+  </section>
     <div class="container">
         <h1> {{course.id}} {{ course.name }} </span></h1><span class="faculty"> {{ course.get_faculty_display }}</span>
         <div>

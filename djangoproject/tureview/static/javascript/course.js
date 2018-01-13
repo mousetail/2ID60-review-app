@@ -11,6 +11,13 @@ $(document).ready(() => {
     thumbs('down', event);
   });
 
+  $("#flip").click(function(){
+      $("#panel").slideToggle();
+      console.log("flip");
+  });
+
+  $('#panel').hide();
+
 });
 
 function thumbs(upDown, event) {
