@@ -24,8 +24,6 @@ def search(request):
 def course(request, code):
     student = Student.objects.get(user=request.user)
     code = code.upper()
-    up_list = []
-    down_list = []
     try:
         course = Course.objects.get(id__iexact=code)
     except Course.DoesNotExist:
@@ -42,7 +40,7 @@ def course(request, code):
             review.down = False
 
     return render(request, "tureview/course.html",
-                  {'course': course, 'reviews': reviews, 'up': up_list, 'down': down_list})
+                  {'course': course, 'reviews': reviews})
 
 
 @login_required

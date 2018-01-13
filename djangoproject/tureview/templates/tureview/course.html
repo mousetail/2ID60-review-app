@@ -50,6 +50,7 @@
                 <h5>{{ review.reviewShort }}</h5>
                 <div>Rating: {{review.ratingOverall}}</div>
                 <p>{{ review.reviewLong }}</p>
+                <p>By <a href="{% url 'userprofile' username=review.student %}">{{ review.student.user.username }}</a><p>
                 <p>date: <b>{{ review.date }}</b></p>
                 <p id="thumbsUpText">thumbs up: <b id="thumbsUpCount">{{ review.thumbsUp.count }}</b></p>
                 <p id="thumbsDownText">thumbs down: <b id="thumbsDownCount">{{ review.thumbsDown.count }}</b></p>
