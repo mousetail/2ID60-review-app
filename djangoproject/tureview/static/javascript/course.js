@@ -11,12 +11,12 @@ $(document).ready(() => {
     thumbs('down', event);
   });
 
-  $("#flip").click(function(){
-      $("#panel").slideToggle();
+  $("div").siblings("#flip").click(function(){
+      $(this).siblings().slideToggle();
       console.log("flip");
   });
 
-  $('#panel').hide();
+  $("div").siblings("#flip").siblings().hide();
 
 });
 

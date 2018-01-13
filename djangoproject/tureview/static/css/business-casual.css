@@ -23,6 +23,18 @@ h1,h2,h3,h4,h5,h6 {
   width: 100%;
 }
 
+.whitebox {
+
+width: 100%;
+padding-right: 30px;
+padding-left: 30px;
+flex-wrap: wrap;
+margin-left: auto !important;
+margin-right: auto !important;
+position: relative;
+min-height: 1px;
+
+}
 h1{
   font-family: Raleway;
 }
@@ -43,6 +55,16 @@ p {
         border:1px solid #ccc;
         background-color:#FFF;
 }
+.container.course {
+  width: 100%;
+margin-right: auto;
+margin-left: auto;
+}
+.row.course {
+display: flex;
+flex-wrap: wrap;
+}
+}
 .expand {
         text-decoration:underline;
         cursor:hand;
@@ -51,6 +73,9 @@ p {
 /* and of used in search drop down menu*/
 
 /* To make life easier*/
+.background {
+  background-color: rgba(255, 59, 63, 0.8);
+}
 .full {
   width:100%;
   font-family: signika negative;
@@ -94,6 +119,20 @@ p.italic {
   margin-left: 3.6rem;
 
 }
+.coursedescription {
+    position: relative;
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    width:100%;
+    background-color: rgba(255, 59, 63, 1);
+    border-style: none none solid none;
+}
+.aligncenter{
+  text-align: center;
+  width: 100%;
+}
 .bg-primary {
   background-color: #e6a756 !important;
 }
@@ -113,19 +152,18 @@ p.italic {
   color: rgb(255, 59, 63);
 }
 
-.reviewblock {
-  background-color: white;
-  width:85%;
-  margin-bottom: 5px;
-  left: 0px;
-  position: absolute;
+.left{
+  float:left;
+  left:0;
+  position: relative;
 }
-
-.thumbsblock {
-  background-color: white;
-  width:15%;
-  right: 0px;
-  position: absolute;
+.right{
+  float:right;
+  right:0;
+  position: relative;
+}
+.korter{
+  width:auto;
 }
 /* end to make life easier*/
 
@@ -159,7 +197,7 @@ p.italic {
   padding-bottom: 1rem;
   background-color: rgba(255, 59, 63, 0.8);
 }
-.cta .cta-inner {
+.cta-inner {
   position: relative;
   padding-top: 20px;
   padding-right: 5px;
@@ -168,7 +206,7 @@ p.italic {
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
 }
-.cta .cta-inner:before {
+.cta-inner:before {
   border-radius: 0.5rem;
   content: '';
   position: absolute;
@@ -184,12 +222,6 @@ p.italic {
   padding: 3rem;
   margin: 0rem;
   background-color: white;
-}
-
-.searchbox{
-  width: 100%
-  margin-right: 0rem;
-  overflow: auto;
 }
 
 #facfield{
@@ -233,6 +265,7 @@ p.italic {
   margin-bottom: 3rem;
   margin-left: auto;
   margin-right: auto;
+  border-style: solid;
 }
 .section-heading {
   text-transform: uppercase;
