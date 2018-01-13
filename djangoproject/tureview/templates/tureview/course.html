@@ -15,21 +15,35 @@
         {% for review in reviews %}
         <div class="row">
             <div class="col-xl-9 mx-auto">
-                <div class="cta-inner text-center rounded">
-                    <input type="hidden" id="review-pk" value="{{ review.pk }}" />
-                    <h5>{{ review.reviewShort }}</h5>
-                    <div>Rating: {{review.ratingOverall}}</div>
-                    <p>{{ review.reviewLong }}</p>
-                    <p>date: <b>{{ review.date }}</b></p>
-                    <p>thumbs up: <b>{{ review.thumbsUp.count }}</b></p>
-                    <p>thumbs down: <b>{{ review.thumbsDown.count }}</b></p>
-                    <button class="btn btn-primary thumbsUp" id="thumbsUp">
-                      Thumbs Up!
-                    </button>
-                    <button class="btn btn-primary thumbsDown" id="thumbsDown">
-                      Thumbs Down!
-                    </button>
-                </div>
+              <div class="cta-inner text-center rounded">
+                <h5>{{ review.reviewShort }}</h5>
+                <div>Rating: {{review.ratingOverall}}</div>
+                <p>{{ review.reviewLong }}</p>
+                <p>date: <b>{{ review.date }}</b></p>
+                <p id="thumbsUpText">thumbs up: <b id="thumbsUpCount">{{ review.thumbsUp.count }}</b></p>
+                <p id="thumbsDownText">thumbs down: <b id="thumbsDownCount">{{ review.thumbsDown.count }}</b></p>
+                {% if request.user.is_authenticated %}
+                <button class="btn btn-primary thumbsUp" id="thumbsUp">
+                  {% if review.up == True %}
+                    <i class="fa fa-thumbs-up active" style=aria-hidden="true">UP ACTIVE</i>
+                    <i class="fa fa-thumbs-o-up inactive" style="display: none;" style=aria-hidden="true">UP INACTIVE</i>
+                  {% else %}
+                    <i class="fa fa-thumbs-up active" style="display: none;" style=aria-hidden="true">UP ACTIVE</i>
+                    <i class="fa fa-thumbs-o-up inactive" style=aria-hidden="true">UP INACTIVE</i>
+                  {% endif %}
+                </button>
+                <button class="btn btn-primary thumbsDown" id="thumbsDown">
+                  {% if review.down == True %}
+                    <i class="fa fa-thumbs-down active" style=aria-hidden="true">DOWN ACTIVE</i>
+                    <i class="fa fa-thumbs-o-down inactive" style="display: none;" style=aria-hidden="true">DOWN INACTIVE</i>
+                  {% else %}
+                    <i class="fa fa-thumbs-down active" style="display: none;" style=aria-hidden="true">DOWN ACTIVE</i>
+                    <i class="fa fa-thumbs-o-down inactive" style=aria-hidden="true">DOWN INACTIVE</i>
+                  {% endif %}
+              </button>
+                <input type="hidden" id="review-pk" value="{{ review.pk }}" />
+                {% endif %}
+              </div>
             </div>
         </div>
         {% empty %}
