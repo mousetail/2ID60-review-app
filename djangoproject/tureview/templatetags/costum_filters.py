@@ -11,8 +11,10 @@ def yearStudent(value, arg):
         rtn = "1st"
     elif diff == 2:
         rtn = "2nd"
-    elif diff > 2:
-        rtn = str(diff) + "nd"
+    elif diff == 3:
+        rtn = str(diff) + "rd"
+    elif diff > 3:
+        rtn = str(diff) + "th"
     else:
         rtn = "ERROR"
     return rtn
