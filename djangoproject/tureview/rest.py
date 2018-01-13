@@ -1,6 +1,6 @@
 import json
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from . import models
@@ -93,12 +93,14 @@ def search(request):
 
 @csrf_exempt
 def thumbs(request, code):
+    student = Student.objects.get(user=request.user)
+    review_pk = request.POST.get("review_pk", "")
+    review = Review.objects.get(pk=review_pk)
+
     if request.method == 'POST':
-        student = Student.objects.get(user=request.user)
         upDown = request.POST.get("thumbs", "")
-        review_pk = request.POST.get("review_pk", "")
-        review = Review.objects.get(pk=review_pk)
         rtn = 'none'
+
         if upDown == 'up': # student clicked 'up'
             if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
                 review.thumbsDown.remove(student)
@@ -121,4 +123,8 @@ def thumbs(request, code):
             else:
                 review.thumbsDown.add(student)
                 rtn = 'down'
-        return HttpResponse(json.dumps({"state": rtn}), content_type="application/json")
+
+        upCount = review.thumbsUp.count()
+        downCount = review.thumbsDown.count()
+        data = {'state': rtn, 'up': upCount, 'down': downCount}
+        return JsonResponse(data, safe=False)
