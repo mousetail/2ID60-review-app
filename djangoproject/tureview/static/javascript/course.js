@@ -11,11 +11,19 @@ $(document).ready(() => {
     thumbs('down');
   });
 
+  $("#flip").click(function(){
+      $("#panel").slideToggle();
+      console.log("flip");
+  });
+
+  $('#panel').hide();
+
 });
 
 
+
 function thumbs(upDown) {
-  let review_pk = 
+  let review_pk =
   console.log("review_pk: " +
   $.ajax({
       url: window.location.href + 'thumbs/',
@@ -33,5 +41,5 @@ function thumbs(upDown) {
         console.log(jqXHR);
 
       }
-  });
+  }));
 }

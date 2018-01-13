@@ -112,6 +112,21 @@ p.italic {
   border-color: #365158;
   color: rgb(255, 59, 63);
 }
+
+.reviewblock {
+  background-color: white;
+  width:85%;
+  margin-bottom: 5px;
+  left: 0px;
+  position: absolute;
+}
+
+.thumbsblock {
+  background-color: white;
+  width:15%;
+  right: 0px;
+  position: absolute;
+}
 /* end to make life easier*/
 
 
