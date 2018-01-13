@@ -21,8 +21,8 @@ $(document).ready(() => {
 });
 
 function thumbs(upDown, event) {
-  let thumbsUp = $(event.currentTarget).siblings('#thumbsUpText').children('#thumbsUpCount');
-  let thumbsDown = $(event.currentTarget).siblings('#thumbsDownText').children('#thumbsDownCount');
+  let thumbsUp = $(event.currentTarget).siblings('#thumbsUpCount');
+  let thumbsDown = $(event.currentTarget).siblings('#thumbsDownCount');
   let review_pk = $(event.currentTarget).siblings('#review-pk').val();
   let active = $(event.currentTarget).children('.active');
   let inactive = $(event.currentTarget).children('.inactive');
