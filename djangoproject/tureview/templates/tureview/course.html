@@ -1,6 +1,6 @@
 {% extends 'tureview/base.html' %}
 {% load static %}
-
+{% load costum_filters %}
 {% block title %}course {{ course.id }} {% endblock %}
 
 {% block content %}
@@ -43,6 +43,7 @@
               <span class="tsmall"><a href="{% url 'userprofile' username=review.student %}">{{ review.student.user.username }}</a></span>
               <span class="tsmall">
                 <!-- zoveelste jaars student, pas dit niet aan -->
+                {{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br>
               </span>
               <span class="tsmall">1st year course, faculty:IEIS (HARDCODED !!!BESTAAT NIET!!!)</span>
               <span class="tsmall" style="float: right;"> {{ review.date }} </span>
