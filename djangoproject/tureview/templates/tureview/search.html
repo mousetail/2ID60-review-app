@@ -6,7 +6,7 @@
 {% block title %} Search {% endblock %}
 
 {% block content %}
-<section class="page-section cta">
+<section class="page-section background">
   <div class="container">
     <div class="row">
 
@@ -29,7 +29,7 @@
 
         <!-- below a drop down menu was made, can be seen in search.js document ready function -->
         <p class="expand">More filters</p>
-        <div class="text rounded searchbox">
+        <div class="text whitebox rounded">
           <label for="facfield">Faculty: </label>
           <select id="facfield" name="fac">
             <option value="" selected="selected">any</option>
@@ -76,8 +76,7 @@
 
       <!-- This part is used for generating the results -->
       <div id="courseTemplate" style="display: none;">
-        <a class="row" href="" id="link">
-          <div class="col-xl-9 mx-auto">
+        <a class="whitebox" href="" id="link">
             <div class="cta-inner text-center rounded">
               <h2 class="section-heading mb-4">
                 <span class="section-heading-upper" id="cName"></span>
@@ -90,7 +89,6 @@
               <p class="mb-0"> Short description:</p>
               <p class="italic" id="cShortDesc"></p>
               <p class="tcgrey tsmall" id="cYears"></p>
-            </div>
           </div>
         </a>
       </div>
