@@ -28,7 +28,7 @@
         <p>When you do not know the exact ID, please use the filters below</p>
 
         <!-- below a drop down menu was made, can be seen in search.js document ready function -->
-        <p class="expand">More filters</p>
+        <h6 class="expand">More filters</h6>
         <div class="text whitebox rounded">
           <label for="facfield">Faculty: </label>
           <select id="facfield" name="fac">
@@ -65,9 +65,11 @@
               <option value="rating">Rating</option>
               <option value="number">Number of reviews</option>
           </select>
+          <a href="#"><button type="reset" class="reset btn-reset btn btn-primary fa fa-trash"><i aria-hidden="true"></i></button></a>
+          
       </div>
-      <button type="reset" class="btn btn-primary btn-xl btn-search">reset</button>
-      <button type="submit" class="btn btn-primary btn-xl btn-search ">submit</button>
+      
+      <button type="submit" class="btn btn-primary btn-xl btn-search "><i class="fa fa-search" aria-hidden="true"></i> submit</button>
       </form>
 
       <!-- place where the results will be posted due to search.js -->

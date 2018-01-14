@@ -18,8 +18,10 @@
             <input name="password" type="password" class="form-control" placeholder="password"></input>
           </div>
           <input type="submit" class="btn btn-primary btn-xl login" value="login" />
+          <a class="btn btn-primary btn-xl login" href="{% url 'register' %}">Register</a>
         </form>
-        <a class="btn btn-primary btn-xl login" href="{% url 'register' %}">Register</a>
+        
     </div>
 </section>
 {% endblock %}
+

@@ -30,13 +30,14 @@ a:hover {
 .whitebox {
 
 width: 100%;
-padding-right: 30px;
-padding-left: 30px;
+padding-right: 1rem;
+padding-left: 1rem;
 flex-wrap: wrap;
 margin-left: auto !important;
 margin-right: auto !important;
 position: relative;
 min-height: 1px;
+
 
 }
 h1{
@@ -50,6 +51,14 @@ p {
   color: black;
 }
 
+h6{
+  font-family: signika negative;
+  color:black;
+  text-decoration:underline;
+  cursor:hand;
+  cursor:pointer;
+  margin-bottom: 1rem;
+}
 /* nav bar*/
 .collapse{
   font-family: raleway;
@@ -58,6 +67,7 @@ p {
 /* login*/
 .form-group{
   font-family: signika negative;
+
 
 }
 
@@ -71,9 +81,10 @@ p {
         background-color:#FFF;
 }
 .container.course {
-  width: 100%;
+width: 100%;
 margin-right: auto;
 margin-left: auto;
+background-color: rgba(255, 255, 10, 0.9);
 }
 .row.course {
 display: flex;
@@ -81,9 +92,9 @@ flex-wrap: wrap;
 }
 }
 .expand {
-        text-decoration:underline;
-        cursor:hand;
-        cursor:pointer;
+text-decoration:underline;
+cursor:hand;
+cursor:pointer;
 }
 /* and of used in search drop down menu*/
 
@@ -114,6 +125,7 @@ p.italic {
 }
 .tsmall {
   font-size: calc(8px + 0.4vmin);
+  
 }
 .tbig {
   font-size: calc(10px + 2.1vmin);
@@ -139,22 +151,34 @@ p.italic {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-left: 3.6rem;
-  margin-bottom: 0;
-  margin-top: 13px;
+  margin-bottom: 1rem;
+  margin-top: 6px;
+  cursor:hand;
+  cursor:pointer;
 }
 .btn-search{
   margin-bottom: 0rem;
+  cursor:hand;
+  cursor:pointer;
+}
+.btn-reset{
+  font-size: 20px;
+  margin:2px;
+  color: white;
+  background-color: #365158;
+  border-color: #365158;
+  cursor:hand;
+  cursor:pointer;
 }
 .coursedescription {
     position: relative;
     padding-top: 20px;
-    padding-right: 5px;
+    padding-right: 24px;
     padding-bottom: 20px;
     padding-left: 5px;
     width:100%;
-    background-color: rgba(255, 59, 63, 1);
-    border-style: none none solid none;
+    margin-left:1rem;
+
 }
 .aligncenter{
   text-align: center;
@@ -178,6 +202,7 @@ p.italic {
   border-color: #365158;
   color: rgb(255, 59, 63);
 }
+
 
 .left{
   float:left;
@@ -297,6 +322,7 @@ p.italic {
 }
 #sortfield{
   width: 204px;
+  height: 31px;
 }
 
 .float-block {
@@ -336,6 +362,11 @@ p.italic {
 
 
 /* navbar shizzles */
+.toggler{
+  cursor:hand;
+  cursor:pointer;
+}
+
 #mainNav {
   background-color: #365158;
   font-family: 'Raleway';
