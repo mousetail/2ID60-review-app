@@ -1,5 +1,5 @@
 body {
-  
+
   background: rgba(216, 216, 216, 0.8);
   background-image: url("../img/bg4.jpg");
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@ flex-wrap: wrap;
   width:100%;
   font-family: signika negative;
   margin: 1rem;
-  
+
 }
 
 #idfield{
@@ -133,8 +133,9 @@ p.italic {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-left: 3.6rem; 
-  margin-bottom: 1rem;
+  margin-left: 3.6rem;
+  margin-bottom: 0;
+  margin-top: 13px;
 }
 .btn-search{
   margin-bottom: 0rem;
@@ -231,6 +232,7 @@ p.italic {
   padding-left: 5px;
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #ccc;
 }
 .cta-innerhover {
   position: relative;
@@ -240,19 +242,10 @@ p.italic {
   padding-left: 5px;
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #ccc;
 }
 .cta-innerhover:hover {
-  background-color: yellow;
-}
-.cta-inner:before {
-  border-radius: 0.5rem;
-  content: '';
-  position: absolute;
-  top: -0.5rem;
-  bottom: -0.5rem;
-  left: -0.5rem;
-  right: -0.5rem;
-  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+  background-color: #90b3bb;
 }
 
 .cta-inner-search{
@@ -261,7 +254,6 @@ p.italic {
   margin: 0rem;
   background-color: white;
 }
-
 #facfield{
   width:200px;
 }
