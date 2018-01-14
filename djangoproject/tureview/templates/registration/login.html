@@ -6,13 +6,20 @@
 {% block content %}
 <section class="page-section background">
     <div class="container">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-
-            <input type="submit" class="btn btn-primary btn-xl login" value="login" />
+      <form method="post">
+        <form name="form" method="POST" action="{% url 'login' %}" class="post-form" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label>Username</label>
+            <input name="username" type="text" class="form-control" placeholder="username">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input name="password" type="password" class="form-control" placeholder="password"></input>
+          </div>
+          <input type="submit" class="btn btn-primary btn-xl login" value="login" />
         </form>
-        <a class="btn btn-primary btn-xl login" href="../register">Register</a>
+        <a class="btn btn-primary btn-xl login" href="{% url 'register' %}">Register</a>
     </div>
 </section>
 {% endblock %}

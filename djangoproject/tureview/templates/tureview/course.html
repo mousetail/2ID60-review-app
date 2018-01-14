@@ -45,7 +45,7 @@
                 <!-- zoveelste jaars student, pas dit niet aan -->
                 {{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br>
               </span>
-              <span class="tsmall">1st year course, faculty:IEIS (HARDCODED !!!BESTAAT NIET!!!)</span>
+              <span class="tsmall">1st year course, faculty: {{ review.timeslot.course.faculty }}</span>
               <span class="tsmall" style="float: right;"> {{ review.date }} </span>
             </div>
               <div>

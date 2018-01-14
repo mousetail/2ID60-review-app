@@ -22,22 +22,24 @@ def search(request):
 
 
 def course(request, code):
-    student = Student.objects.get(user=request.user)
+    if request.user.is_authenticated:
+        student = Student.objects.get(user=request.user)
     code = code.upper()
     try:
         course = Course.objects.get(id__iexact=code)
     except Course.DoesNotExist:
         return HttpResponse("course \"" + str(code) + "\" does not exist")
     reviews = Review.objects.filter(timeslot__course=course).order_by('date')
-    for review in reviews:
-        if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
-            review.up = True
-        else:
-            review.up = False
-        if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
-            review.down = True
-        else:
-            review.down = False
+    if request.user.is_authenticated:
+        for review in reviews:
+            if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
+                review.up = True
+            else:
+                review.up = False
+            if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
+                review.down = True
+            else:
+                review.down = False
 
     return render(request, "tureview/course.html",
                   {'course': course, 'reviews': reviews})
