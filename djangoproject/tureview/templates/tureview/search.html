@@ -77,22 +77,33 @@
       <!-- This part is used for generating the results -->
       <div id="courseTemplate" style="display: none;">
         <a class="whitebox" href="" id="link">
-            <div class="cta-inner text-center rounded">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper" id="cName"></span>
-                <span class="section-heading-lower text-uppercase text-expanded" id="cID"></span>
-              </h2>
-              <div class="float-block">
-                <p class="tbig gradeblock" id="cAvgRat"></p>
-                <p class="tsmall" id="aReview"> </p>
-              </div>
-              <p class="mb-0"> Short description:</p>
-              <p class="italic" id="cShortDesc"></p>
-              <p class="tcgrey tsmall" id="cYears"></p>
+          <div class="cta-innerhover rounded">
+            <div class="section-heading mb-4">
+              <table style="border-collapse: collapse; width: 100%;">
+                <colgroup>
+                   <col span="1" style="width: 15%;">
+                   <col span="1" style="width: 70%;">
+                   <col span="1" style="width: 15%;">
+                </colgroup>
+                <tr>
+                  <th class="tbig" colspan="2" id="cName"></th>
+                  <th class="tbig" style="text-align: right;" id="cAvgRat"></th>
+                </tr>
+                <tr>
+                  <td class="tsmall" id="cID"></a> </td>
+                  <td class="tsmall" style="text-align: right; overflow: visible;" colspan="2" id="aReview"></td>
+                </tr>
+                <tr>
+                  <td class="tsmall" colspan="3" id="cShortDesc"></td>
+                </tr>
+                <tr>
+                  <td class="tsmall" colspan="3" id="cYears"></td>
+                </tr>
+              </table>
+            </div>
           </div>
         </a>
       </div>
-
     </div>
   </div>
 </section>
