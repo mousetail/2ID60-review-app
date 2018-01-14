@@ -33,18 +33,18 @@
         <div class="col-xl-9 mx-auto">
           <a href="{% url 'course' code=topcourses.0.id %}">
             <div class="cta-innerhover text-center rounded">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Best rated course:</span>
-                <span class="section-heading-upper">{{ topcourses.0.name }}</span>
-                <span class="section-heading-lower text-uppercase text-expanded">{{ topcourses.0.id }}</span>
+              <h2 class="section-heading mb-4 text-center centralize">
+                <span class="tcbig">Best rated course:</span></br>
+                <span class="tcbig">{{ topcourses.0.name }}</span></br>
+                <span class="text-uppercase text-expanded tcbigger">{{ topcourses.0.id }}</span>
               </h2>
               <div class="float-block">
                 <p class="tbig gradeblock">{{ topcourses.0.averageRating }}</p>
-                <p class="tsmall"> {{ topcourses.0.reviewNumber }}</p>
+                <p class="tcsmaller">review amount: {{ topcourses.0.reviewNumber }}</p>
               </div>
-              <p class="mb-0"> Short description:</p>
-              <p class="italic" >{{ topcourses.0.descriptionShort }}</p>
-              <p class="tcgrey tsmall"> {{ topcourses.0.faculty }} </p>
+              <p class="mb-0 tcsmall" > Short description:</p>
+              <p class="italic tcsmall" >{{ topcourses.0.descriptionShort }}</p>
+              <p class="tcgrey tcsmall"> {{ topcourses.0.faculty }} </p>
             </div>
           </a>
         </div>
@@ -53,20 +53,20 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <a href="{% url 'course' code=topcourses.1.id %}">
+          <a href="{% url 'course' code=topcourses.0.id %}">
             <div class="cta-innerhover text-center rounded">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Second best rated course:</span>
-                <span class="section-heading-upper">{{ topcourses.1.name }}</span>
-                <span class="section-heading-lower text-uppercase text-expanded">{{ topcourses.1.id }}</span>
+              <h2 class="section-heading mb-4 text-center centralize">
+                <span class="tcbig">Best rated course:</span></br>
+                <span class="tcbig">{{ topcourses.1.name }}</span></br>
+                <span class="text-uppercase text-expanded tcbigger">{{ topcourses.1.id }}</span>
               </h2>
               <div class="float-block">
                 <p class="tbig gradeblock">{{ topcourses.1.averageRating }}</p>
-                <p class="tsmall"> {{ topcourses.1.reviewNumber }}</p>
+                <p class="tcsmaller">review amount: {{ topcourses.1.reviewNumber }}</p>
               </div>
-              <p class="mb-0"> Short description:</p>
-              <p class="italic" >{{ topcourses.1.descriptionShort }}</p>
-              <p class="tcgrey tsmall"> {{ topcourses.1.faculty }} </p>
+              <p class="mb-0 tcsmall" > Short description:</p>
+              <p class="italic tcsmall" >{{ topcourses.1.descriptionShort }}</p>
+              <p class="tcgrey tcsmall"> {{ topcourses.1.faculty }} </p>
             </div>
           </a>
         </div>
@@ -75,20 +75,20 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <a href="{% url 'course' code=topcourses.2.id %}">
+          <a href="{% url 'course' code=topcourses.0.id %}">
             <div class="cta-innerhover text-center rounded">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Third best rated course:</span>
-                <span class="section-heading-upper">{{ topcourses.2.name }}</span>
-                <span class="section-heading-lower text-uppercase text-expanded">{{ topcourses.2.id }}</span>
+              <h2 class="section-heading mb-4 text-center centralize">
+                <span class="tcbig">Best rated course:</span></br>
+                <span class="tcbig">{{ topcourses.2.name }}</span></br>
+                <span class="text-uppercase text-expanded tcbigger">{{ topcourses.2.id }}</span>
               </h2>
               <div class="float-block">
                 <p class="tbig gradeblock">{{ topcourses.2.averageRating }}</p>
-                <p class="tsmall"> {{ topcourses.2.reviewNumber }}</p>
+                <p class="tcsmaller">review amount: {{ topcourses.2.reviewNumber }}</p>
               </div>
-              <p class="mb-0"> Short description:</p>
-              <p class="italic" >{{ topcourses.2.descriptionShort }}</p>
-              <p class="tcgrey tsmall"> {{ topcourses.2.faculty }} </p>
+              <p class="mb-0 tcsmall" > Short description:</p>
+              <p class="italic tcsmall" >{{ topcourses.2.descriptionShort }}</p>
+              <p class="tcgrey tcsmall"> {{ topcourses.2.faculty }} </p>
             </div>
           </a>
         </div>
