@@ -99,7 +99,7 @@ p.italic {
   color: rgb(64,64,64);
 }
 .tsmall {
-  font-size: 10px;
+  font-size: calc(8px + 0.4vmin);
 }
 .tbig {
   font-size: calc(10px + 2.1vmin);
