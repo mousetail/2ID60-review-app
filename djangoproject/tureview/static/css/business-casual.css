@@ -1,15 +1,17 @@
 body {
-  font-family: 'Lora';
-  background-color: rgb(216, 216, 216);
-  background-image: url("../img/background.jpeg");
+
+  background: rgba(216, 216, 216, 0.8);
+  background-image: url("../img/bg4.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size: auto;
-  position:relative;
+  background-size: cover;
+  position: relative;
   min-height: 100vh;
   padding-bottom: 100px;
+
 }
+
 button.res {
     background-color: #F75A5E;
     width: 100%;
@@ -28,17 +30,18 @@ a:hover {
 .whitebox {
 
 width: 100%;
-padding-right: 30px;
-padding-left: 30px;
+padding-right: 1rem;
+padding-left: 1rem;
 flex-wrap: wrap;
 margin-left: auto !important;
 margin-right: auto !important;
 position: relative;
 min-height: 1px;
 
+
 }
 h1{
-  font-family: Raleway;
+  font-family: raleway;
 }
 
 p {
@@ -46,6 +49,26 @@ p {
   width:100%;
   font-family: signika negative;
   color: black;
+}
+
+h6{
+  font-family: signika negative;
+  color:black;
+  text-decoration:underline;
+  cursor:hand;
+  cursor:pointer;
+  margin-bottom: 1rem;
+}
+/* nav bar*/
+.collapse{
+  font-family: raleway;
+  font-weight: 600;
+}
+/* login*/
+.form-group{
+  font-family: signika negative;
+
+
 }
 
 /* text is used in js, this will expand below for uitklapfunctie in forms*/
@@ -58,9 +81,10 @@ p {
         background-color:#FFF;
 }
 .container.course {
-  width: 100%;
+width: 100%;
 margin-right: auto;
 margin-left: auto;
+background-color: rgba(255, 255, 10, 0.9);
 }
 .row.course {
 display: flex;
@@ -68,21 +92,22 @@ flex-wrap: wrap;
 }
 }
 .expand {
-        text-decoration:underline;
-        cursor:hand;
-        cursor:pointer;
+text-decoration:underline;
+cursor:hand;
+cursor:pointer;
 }
 /* and of used in search drop down menu*/
 
 /* To make life easier*/
 .background {
-  background-color: rgba(255, 59, 63, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
 }
 .full {
   width:100%;
   font-family: signika negative;
-  margin-left: 1rem;
-  margin-right:1rem;
+  margin: 1rem;
+
 }
 
 #idfield{
@@ -99,13 +124,20 @@ p.italic {
   color: rgb(64,64,64);
 }
 .tsmall {
-  font-size: 10px;
+  font-size: calc(8px + 0.4vmin);
+  
 }
 .tbig {
   font-size: calc(10px + 2.1vmin);
 }
 .text-primary {
   color #e6a756 !important
+}
+
+.centralize {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 .login{
   font-family: signika;
@@ -119,18 +151,34 @@ p.italic {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-left: 3.6rem;
-
+  margin-bottom: 1rem;
+  margin-top: 6px;
+  cursor:hand;
+  cursor:pointer;
+}
+.btn-search{
+  margin-bottom: 0rem;
+  cursor:hand;
+  cursor:pointer;
+}
+.btn-reset{
+  font-size: 20px;
+  margin:2px;
+  color: white;
+  background-color: #365158;
+  border-color: #365158;
+  cursor:hand;
+  cursor:pointer;
 }
 .coursedescription {
     position: relative;
     padding-top: 20px;
-    padding-right: 5px;
+    padding-right: 24px;
     padding-bottom: 20px;
     padding-left: 5px;
     width:100%;
-    background-color: rgba(255, 59, 63, 1);
-    border-style: none none solid none;
+    margin-left:1rem;
+
 }
 .aligncenter{
   text-align: center;
@@ -155,6 +203,7 @@ p.italic {
   color: rgb(255, 59, 63);
 }
 
+
 .left{
   float:left;
   left:0;
@@ -177,6 +226,21 @@ p.italic {
   text-align: center;
   font-family: signika;
 }
+
+.tcbig {
+  font-size: calc(7px + 2.1vmin)
+}
+
+.tcbigger {
+  font-size: calc(10px + 4vmin);
+}
+
+.tcsmall {
+  font-size: calc(5px + 2.1vmin)
+}
+.tcsmaller {
+  font-size: calc(1px + 1.6vmin)
+}
 .gradeblock {
   margin-left: auto;
   margin-right: auto;
@@ -191,6 +255,11 @@ p.italic {
   bottom: 0px;
   width:100%;
 }
+.py-5{
+  padding-top: 2rem!important;
+  padding-bottom: 2rem!important;
+}
+
 ::before {
   position: relative;
   z-index: -1;
@@ -198,7 +267,8 @@ p.italic {
 .cta {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: rgba(255, 59, 63, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
 }
 .cta-inner {
   position: relative;
@@ -208,6 +278,7 @@ p.italic {
   padding-left: 5px;
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #ccc;
 }
 .cta-innerhover {
   position: relative;
@@ -217,19 +288,10 @@ p.italic {
   padding-left: 5px;
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #ccc;
 }
 .cta-innerhover:hover {
-  background-color: yellow;
-}
-.cta-inner:before {
-  border-radius: 0.5rem;
-  content: '';
-  position: absolute;
-  top: -0.5rem;
-  bottom: -0.5rem;
-  left: -0.5rem;
-  right: -0.5rem;
-  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+  background-color: #90b3bb;
 }
 
 .cta-inner-search{
@@ -238,7 +300,6 @@ p.italic {
   margin: 0rem;
   background-color: white;
 }
-
 #facfield{
   width:200px;
 }
@@ -261,15 +322,16 @@ p.italic {
 }
 #sortfield{
   width: 204px;
+  height: 31px;
 }
 
 .float-block {
   height: auto;
-  width: 70px;
+  width: 10%;
   position: absolute;
   right: 0px;
   top: 0px;
-  margin-right: 5%;
+  margin-right: 2%;
   color: black;
 }
 
@@ -300,6 +362,11 @@ p.italic {
 
 
 /* navbar shizzles */
+.toggler{
+  cursor:hand;
+  cursor:pointer;
+}
+
 #mainNav {
   background-color: #365158;
   font-family: 'Raleway';

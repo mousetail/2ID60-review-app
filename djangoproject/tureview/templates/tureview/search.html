@@ -28,7 +28,7 @@
         <p>When you do not know the exact ID, please use the filters below</p>
 
         <!-- below a drop down menu was made, can be seen in search.js document ready function -->
-        <p class="expand">More filters</p>
+        <h6 class="expand">More filters</h6>
         <div class="text whitebox rounded">
           <label for="facfield">Faculty: </label>
           <select id="facfield" name="fac">
@@ -65,9 +65,11 @@
               <option value="rating">Rating</option>
               <option value="number">Number of reviews</option>
           </select>
+          <a href="#"><button type="reset" class="reset btn-reset btn btn-primary fa fa-trash"><i aria-hidden="true"></i></button></a>
+          
       </div>
-      <button type="reset" class="btn btn-primary btn-xl ">reset</button>
-      <button type="submit" class="btn btn-primary btn-xl ">submit</button>
+      
+      <button type="submit" class="btn btn-primary btn-xl btn-search "><i class="fa fa-search" aria-hidden="true"></i> submit</button>
       </form>
 
       <!-- place where the results will be posted due to search.js -->
@@ -75,23 +77,28 @@
       <p id="noresults"> </p>
 
       <!-- This part is used for generating the results -->
-      <div id="courseTemplate" style="display: none;">
+      <div id="courseTemplate" style="display: none; margin-bottom:-50px;">
         <a class="whitebox" href="" id="link">
           <div class="cta-innerhover rounded">
             <div class="section-heading mb-4">
               <table style="border-collapse: collapse; width: 100%;">
                 <colgroup>
-                   <col span="1" style="width: 15%;">
+                   <col span="1" style="width: 5%;">
                    <col span="1" style="width: 70%;">
-                   <col span="1" style="width: 15%;">
+                   <col span="1" style="width: 25%;">
                 </colgroup>
                 <tr>
                   <th class="tbig" colspan="2" id="cName"></th>
-                  <th class="tbig" style="text-align: right;" id="cAvgRat"></th>
+                  <th style="text-align: right; vertical-align: top;">
+                    <table style="border-collapse: collapse; width: 100%;">
+                      <tr class="tbig" style="text-align: right;"id="cAvgRat"> </tr>
+                      <tr class="tsmall" style="text-align: right; font-weight: normal; text-transform:lowercase;"id="aReview"> </tr>
+                    </table>
+                  </th>
                 </tr>
                 <tr>
                   <td class="tsmall" id="cID"></a> </td>
-                  <td class="tsmall" style="text-align: right; overflow: visible;" colspan="2" id="aReview"></td>
+                  <td class="tsmall" style="text-align: right; overflow: visible;" colspan="2" ></td>
                 </tr>
                 <tr>
                   <td class="tsmall" colspan="3" id="cShortDesc"></td>

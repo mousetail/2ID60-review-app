@@ -11,6 +11,7 @@
 {% block content %}
 <section class="page-section background">
     <div class="container">
+      <h1 class="tbig">Writing a review for {{ course.id }} - {{ course.name }}</h1>
       <form method="post" novalidate>
         {% csrf_token %}
 
