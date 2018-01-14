@@ -95,7 +95,7 @@ def review(request, code):
 
     else:
         form = ReviewForm(gys2)
-    return render(request, "tureview/review.html", {"form": form})
+    return render(request, "tureview/review.html", {"slots": slots, "form": form})
 
 
 def register(request):
