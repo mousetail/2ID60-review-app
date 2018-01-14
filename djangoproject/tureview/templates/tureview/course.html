@@ -35,23 +35,28 @@
         <div class="whitebox">
           <div class="cta-inner rounded">
             <div class="section-heading mb-4">
+              <table style="border-collapse: collapse; width: 100%;">
+                <colgroup>
+                   <col span="1" style="width: 15%;">
+                   <col span="1" style="width: 70%;">
+                   <col span="1" style="width: 15%;">
+                </colgroup>
+                <tr>
+                  <th class="tbig" colspan="2">{{ review.reviewShort }}</th>
+                  <th class="tbig" style="text-align: right;">{{review.ratingOverall}}</th>
+                </tr>
+                <tr>
+                  <td class="tsmall"><a href="{% url 'userprofile' username=review.student %}">{{ review.student.user.username }}</a> </td>
+                  <td class="tsmall" style="text-align: right; overflow: visible;" colspan="2">{{ review.date }}</td>
+                </tr>
+                <tr>
+                  <td class="tsmall" colspan="3">started this course as:</br>{{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br> from: IEIS HC!</td>
+                </tr>
+              </table>
               <div>
-              <span class="tbig">{{ review.reviewShort }}</span>
-              <span class="tbig" style="float: right;"><span class="tsmall">overall score:</span> {{review.ratingOverall}} </span>
-            </div>
-              <div>
-              <span class="tsmall"><a href="{% url 'userprofile' username=review.student %}">{{ review.student.user.username }}</a></span>
-              <span class="tsmall">
-                <!-- zoveelste jaars student, pas dit niet aan -->
-                {{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br>
-              </span>
-              <span class="tsmall">1st year course, faculty:IEIS (HARDCODED !!!BESTAAT NIET!!!)</span>
-              <span class="tsmall" style="float: right;"> {{ review.date }} </span>
-            </div>
-              <div>
-              <div id="flip"> click for more
+              <div id="flip"> v
               </div>
-              <div id="panel"> {{ review.reviewLong }}
+              <div class="tsmall" id="panel"> {{ review.reviewLong }}
               </div>
             </div>
               <div>

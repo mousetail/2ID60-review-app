@@ -82,6 +82,7 @@ flex-wrap: wrap;
   margin-left: 1rem;
   margin-right:1rem;
 }
+
 #idfield{
   position:relative;
   width: 200px;
@@ -99,7 +100,7 @@ p.italic {
   font-size: 10px;
 }
 .tbig {
-  font-size: 40px;
+  font-size: calc(16px + 2vmin);
 }
 .text-primary {
   color #e6a756 !important
