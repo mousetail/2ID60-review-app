@@ -49,6 +49,9 @@
                   <td class="tsmall"><a href="{% url 'userprofile' username=review.student %}">{{ review.student.user.username }}</a> </td>
                   <td class="tsmall" style="text-align: right; overflow: visible;" colspan="2">{{ review.date }}</td>
                 </tr>
+                <tr>
+                  <td class="tsmall" colspan="3">started this course as:</br>{{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br></td>
+                </tr>
               </table>
               <div>
                 <div id="flip"> v
