@@ -59,11 +59,11 @@
               {% if not request.user.is_authenticated %}<a href="{% url 'login' %}">{% endif %}
                 <button class="btn btn-primary thumbsUp" id="thumbsUp" style="float: right;">
                   {% if review.up == True %}
-                  <i class="fa fa-thumbs-up active" style=aria-hidden="true">UP ACTIVE</i>
-                  <i class="fa fa-thumbs-o-up inactive" style="display: none;" style=aria-hidden="true">UP INACTIVE</i>
+                  <i class="fa fa-thumbs-up active" style=aria-hidden="true"></i>
+                  <i class="fa fa-thumbs-o-up inactive" style="display: none;" style=aria-hidden="true"></i>
                   {% else %}
-                  <i class="fa fa-thumbs-up active" style="display: none;" style=aria-hidden="true">UP ACTIVE</i>
-                  <i class="fa fa-thumbs-o-up inactive" style=aria-hidden="true">UP INACTIVE</i>
+                  <i class="fa fa-thumbs-up active" style="display: none;" style=aria-hidden="true"></i>
+                  <i class="fa fa-thumbs-o-up inactive" style=aria-hidden="true"></i>
                   {% endif %}
                 </button>
                 {% if not request.user.is_authenticated %}</a>{% endif %}
@@ -71,11 +71,11 @@
                 {% if not request.user.is_authenticated %}<a href="{% url 'login' %}">{% endif %}
                   <button class="btn btn-primary thumbsDown" id="thumbsDown" style="float: right;">
                     {% if review.down == True %}
-                    <i class="fa fa-thumbs-down active" style=aria-hidden="true">DOWN ACTIVE</i>
-                    <i class="fa fa-thumbs-o-down inactive" style="display: none;" style=aria-hidden="true">DOWN INACTIVE</i>
+                    <i class="fa fa-thumbs-down active" style=aria-hidden="true"></i>
+                    <i class="fa fa-thumbs-o-down inactive" style="display: none;" style=aria-hidden="true"></i>
                     {% else %}
-                    <i class="fa fa-thumbs-down active" style="display: none;" style=aria-hidden="true">DOWN ACTIVE</i>
-                    <i class="fa fa-thumbs-o-down inactive" style=aria-hidden="true">DOWN INACTIVE</i>
+                    <i class="fa fa-thumbs-down active" style="display: none;" style=aria-hidden="true"></i>
+                    <i class="fa fa-thumbs-o-down inactive" style=aria-hidden="true"></i>
                     {% endif %}
                   </button>
                   {% if not request.user.is_authenticated %}</a>{% endif %}
