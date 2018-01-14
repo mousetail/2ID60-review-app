@@ -8,8 +8,9 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1>{{ user.username }} </h1>
-          <p>
+          
+          <h1 class="username" ><i class="user fa fa-user" aria-hidden="true"></i><br><br>  {{ user.username }} </h1>
+          <p class="userinfo">
             <i>apache</i> <br> <!-- male/female not working -->
             <b>Bachelor: </b> {{ student.get_major_display }} <br>
             <b>Start year: </b> {{ student.startYear }} <br>
@@ -20,7 +21,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <h1>Reviews of {{ user.username }} </h1>
+            <h1 class="userreview">Reviews of {{ user.username }} </h1>
           </div>
           {% for review in reviews %}
           <div class="whitebox">

@@ -67,6 +67,7 @@ h6{
 /* login*/
 .form-group{
   font-family: signika negative;
+  margin: 1rem;
 
 
 }
@@ -85,6 +86,7 @@ width: 100%;
 margin-right: auto;
 margin-left: auto;
 background-color: rgba(255, 255, 10, 0.9);
+
 }
 .row.course {
 display: flex;
@@ -151,8 +153,7 @@ p.italic {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 6px;
+  
   cursor:hand;
   cursor:pointer;
 }
@@ -196,6 +197,7 @@ p.italic {
   font-weight: 400;
   font-family: signika;
   font-size: 16px;
+  margin:1rem;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background-color: #365158;
@@ -347,6 +349,8 @@ p.italic {
 .section-heading {
   text-transform: uppercase;
   color: black;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .section-heading .section-heading-upper {
   display: block;
@@ -393,4 +397,40 @@ p.italic {
  #mainNav .navbar-nav .nav-item.active .nav-link:hover {
     color: rgb(255, 59, 63);
   }
+}
+
+/*profile*/
+#profilePage{
+  position: center;
+  display: inline;
+}
+.user{
+  font-size: 200px!important;
+  border: solid;
+  border-radius: 6px;
+  padding: 1rem 3rem 1rem 3rem;
+  position: relative;
+  display: block;
+  color: #365158; 
+  
+}
+.username{
+  font-family: raleway;
+  font-weight: 400px;
+  font-size: 28px;
+  margin-top: 4rem;
+  text-align: center;
+  color: #365158;
+
+}
+.userinfo {
+  text-align: center;
+}
+
+.userreview{
+  font-size: 28px;
+  margin-top: 4rem;
+  margin-left: 1rem;
+  
+
 }
