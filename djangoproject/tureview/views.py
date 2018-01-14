@@ -22,22 +22,24 @@ def search(request):
 
 
 def course(request, code):
-    student = Student.objects.get(user=request.user)
+    if request.user.is_authenticated:
+        student = Student.objects.get(user=request.user)
     code = code.upper()
     try:
         course = Course.objects.get(id__iexact=code)
     except Course.DoesNotExist:
         return HttpResponse("course \"" + str(code) + "\" does not exist")
     reviews = Review.objects.filter(timeslot__course=course).order_by('date')
-    for review in reviews:
-        if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
-            review.up = True
-        else:
-            review.up = False
-        if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
-            review.down = True
-        else:
-            review.down = False
+    if request.user.is_authenticated:
+        for review in reviews:
+            if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
+                review.up = True
+            else:
+                review.up = False
+            if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
+                review.down = True
+            else:
+                review.down = False
 
     return render(request, "tureview/course.html",
                   {'course': course, 'reviews': reviews})
@@ -132,10 +134,26 @@ def profile(request):
     user = request.user
     student = Student.objects.get(user=user)
     reviews = Review.objects.filter(student=request.user.student)
-    return render(request, "tureview/profile.html", {'user': user, 'student': student, 'reviews': reviews})
+    thumbsUp = 0
+    thumbsDown = 0
+    for review in reviews:
+        if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
+            thumbsUp += 1
+        if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
+            thumbsDown += 1
+    return render(request, "tureview/profile.html", {'user': user,
+        'student': student, 'reviews': reviews, 'upTotal': thumbsUp, 'downTotal': thumbsDown})
 
 def userprofile(request, username):
     user = User.objects.get(username=username) # kan vast eleganter
     student = Student.objects.get(user=user)
     reviews = Review.objects.filter(student=student)
-    return render(request, "tureview/profile.html", {'user': user, 'student': student, 'reviews': reviews})
+    thumbsUp = 0
+    thumbsDown = 0
+    for review in reviews:
+        if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
+            thumbsUp += 1
+        if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
+            thumbsDown += 1
+    return render(request, "tureview/profile.html", {'user': user,
+        'student': student, 'reviews': reviews, 'upTotal': thumbsUp, 'downTotal': thumbsDown})
