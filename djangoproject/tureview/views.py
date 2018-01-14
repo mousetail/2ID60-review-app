@@ -80,6 +80,10 @@ def review(request, code):
                 review.student = student
                 review.timeslot = slot0
                 review.ratingOverall = cleaned["rating"]
+                review.ratingInf = cleaned["infrating"]
+                review.ratingTime = cleaned["timerating"]
+                review.ratingRele = cleaned["relerating"]
+                review.ratingDiff = cleaned["diffrating"]
                 review.save()
 
                 try:

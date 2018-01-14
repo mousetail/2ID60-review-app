@@ -2,7 +2,7 @@ from django import forms as dforms
 from django.core.exceptions import ValidationError
 from django.contrib.auth.password_validation import validate_password
 from .models import Student, Timeslot
-from .widgets import StarWidget
+from .widgets import CounterWidget, StarWidget
 
 
 class RegistrationForm(dforms.Form):
@@ -24,7 +24,11 @@ class ReviewForm(dforms.Form):
         self.fields["timeslot"].choices = timeSlotOptions
     summary = dforms.CharField(widget=dforms.TextInput(
         attrs={'placeholder': 'A once-sentence summary of your review'}))
-    rating = dforms.IntegerField(label="overall rating", widget=StarWidget())
+    rating = dforms.IntegerField(label="overall rating", widget=CounterWidget())
+    infrating = dforms.IntegerField(label="informative", widget=StarWidget())
+    timerating = dforms.IntegerField(label="time consuming", widget=StarWidget())
+    relerating = dforms.IntegerField(label="relevant to study", widget=StarWidget())
+    diffrating = dforms.IntegerField(label="difficulty", widget=StarWidget())
     content = dforms.CharField(widget=dforms.Textarea())
     year = dforms.IntegerField(label='year course taken', initial=2018, widget=dforms.NumberInput(
         attrs={'min': '1900', 'max': '2500'}

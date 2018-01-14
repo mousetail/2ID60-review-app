@@ -82,3 +82,7 @@ class Review(models.Model):
     date = models.DateField(default=timezone.now)
     timeslot = models.ForeignKey(Timeslot)
     ratingOverall = models.IntegerField(default=5)
+    ratingInf = models.IntegerField(default=5)
+    ratingTime = models.IntegerField(default=5)
+    ratingRele = models.IntegerField(default=5)
+    ratingDiff = models.IntegerField(default=5)

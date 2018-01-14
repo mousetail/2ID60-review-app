@@ -1,28 +1,18 @@
 {% load static %}
-<span class="rating" {% include "django/forms/widgets/attrs.html" %}>
-        <div class="rating">
-            <input id="str10" name="{{widget.name}}" type="radio" value="10" class="radio-btn hide" />
-            <label for="str10" >❿</label>
-            <input id="str9" name="{{widget.name}}" type="radio" value="9" class="radio-btn hide" />
-            <label for="str9" >❾</label>
-            <input id="str8" name="{{widget.name}}" type="radio" value="8" class="radio-btn hide" />
-            <label for="str8" >❽</label>
-            <input id="str7" name="{{widget.name}}" type="radio" value="7" class="radio-btn hide" />
-            <label for="str7" >❼</label>
-            <input id="str6" name="{{widget.name}}" type="radio" value="6" class="radio-btn hide" />
-            <label for="str6" >❻</label>
-            <input id="str5" name="{{widget.name}}" type="radio" value="5" class="radio-btn hide" />
-            <label for="str5" >❺</label>
-            <input id="str4" name="{{widget.name}}" type="radio" value="4" class="radio-btn hide" />
-            <label for="str4" >❹</label>
-            <input id="str3" name="{{widget.name}}" type="radio" value="3" class="radio-btn hide" />
-            <label for="str3" >❸</label>
-            <input id="str2" name="{{widget.name}}" type="radio" value="2" class="radio-btn hide" />
-            <label for="str2" >❷</label>
-            <input id="str1" name="{{widget.name}}" type="radio" value="1" class="radio-btn hide" />
-            <label for="str1" >❶</label>
-            <div class="clear"></div>
-        </div>
-</span>
 
-<link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
+<span class="rate">
+  <div class="rate">
+    <input type="radio" id="rating10" name="rating" value="10" /><label for="rating10" title="5 stars"></label>
+    <input type="radio" id="rating9" name="rating" value="9" /><label class="half" for="rating9" title="4 1/2 stars"></label>
+    <input type="radio" id="rating8" name="rating" value="8" /><label for="rating8" title="4 stars"></label>
+    <input type="radio" id="rating7" name="rating" value="7" /><label class="half" for="rating7" title="3 1/2 stars"></label>
+    <input type="radio" id="rating6" name="rating" value="6" /><label for="rating6" title="3 stars"></label>
+    <input type="radio" id="rating5" name="rating" value="5" /><label class="half" for="rating5" title="2 1/2 stars"></label>
+    <input type="radio" id="rating4" name="rating" value="4" /><label for="rating4" title="2 stars"></label>
+    <input type="radio" id="rating3" name="rating" value="3" /><label class="half" for="rating3" title="1 1/2 stars"></label>
+    <input type="radio" id="rating2" name="rating" value="2" /><label for="rating2" title="1 star"></label>
+    <input type="radio" id="rating1" name="rating" value="1" /><label class="half" for="rating1" title="1/2 star"></label>
+    <input type="radio" id="rating0" name="rating" value="0" /><label for="rating0" title="No star"></label>
+  </div>
+</span>
+<link href="{% static 'css/star.css' %}" rel="stylesheet">

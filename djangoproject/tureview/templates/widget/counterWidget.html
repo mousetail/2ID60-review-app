@@ -1,0 +1,28 @@
+{% load static %}
+<span class="rating" {% include "django/forms/widgets/attrs.html" %}>
+        <div class="rating">
+            <input id="str10" name="{{widget.name}}" type="radio" value="10" class="radio-btn hide" />
+            <label for="str10" >❿</label>
+            <input id="str9" name="{{widget.name}}" type="radio" value="9" class="radio-btn hide" />
+            <label for="str9" >❾</label>
+            <input id="str8" name="{{widget.name}}" type="radio" value="8" class="radio-btn hide" />
+            <label for="str8" >❽</label>
+            <input id="str7" name="{{widget.name}}" type="radio" value="7" class="radio-btn hide" />
+            <label for="str7" >❼</label>
+            <input id="str6" name="{{widget.name}}" type="radio" value="6" class="radio-btn hide" />
+            <label for="str6" >❻</label>
+            <input id="str5" name="{{widget.name}}" type="radio" value="5" class="radio-btn hide" />
+            <label for="str5" >❺</label>
+            <input id="str4" name="{{widget.name}}" type="radio" value="4" class="radio-btn hide" />
+            <label for="str4" >❹</label>
+            <input id="str3" name="{{widget.name}}" type="radio" value="3" class="radio-btn hide" />
+            <label for="str3" >❸</label>
+            <input id="str2" name="{{widget.name}}" type="radio" value="2" class="radio-btn hide" />
+            <label for="str2" >❷</label>
+            <input id="str1" name="{{widget.name}}" type="radio" value="1" class="radio-btn hide" />
+            <label for="str1" >❶</label>
+            <div class="clear"></div>
+        </div>
+</span>
+
+<link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
