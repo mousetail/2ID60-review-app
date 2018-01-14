@@ -22,7 +22,9 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Raleway';
   width: 100%;
 }
-
+a:hover {
+  text-decoration: none;
+}
 .whitebox {
 
 width: 100%;
@@ -206,6 +208,18 @@ p.italic {
   padding-left: 5px;
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
+}
+.cta-innerhover {
+  position: relative;
+  padding-top: 20px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 1);
+}
+.cta-innerhover:hover {
+  background-color: yellow;
 }
 .cta-inner:before {
   border-radius: 0.5rem;
