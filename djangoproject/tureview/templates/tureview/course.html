@@ -49,14 +49,13 @@
                   <td class="tsmall"><a href="{% url 'userprofile' username=review.student %}">{{ review.student.user.username }}</a> </td>
                   <td class="tsmall" style="text-align: right; overflow: visible;" colspan="2">{{ review.date }}</td>
                 </tr>
-                <tr>
-                  <td class="tsmall" colspan="3">started this course as:</br>{{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br> from: IEIS HC!</td>
-                </tr>
               </table>
               <div>
                 <div id="flip"> v
                 </div>
-                <div class="tsmall" id="panel"> {{ review.reviewLong }}
+                <div class="tsmall" id="panel">started this course as a {{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br> from: {{ review.student.get_major_display }}</br></br> 
+                  {{ review.reviewLong }}
+
                 </div>
               </div>
               <div class="aligncenter">
