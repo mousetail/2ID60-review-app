@@ -1,5 +1,5 @@
 body {
-  font-family: 'Lora';
+  
   background: rgba(216, 216, 216, 0.8);
   background-image: url("../img/bg4.jpg");
   background-repeat: no-repeat;
@@ -40,7 +40,7 @@ min-height: 1px;
 
 }
 h1{
-  font-family: Raleway;
+  font-family: raleway;
 }
 
 p {
@@ -48,6 +48,17 @@ p {
   width:100%;
   font-family: signika negative;
   color: black;
+}
+
+/* nav bar*/
+.collapse{
+  font-family: raleway;
+  font-weight: 600;
+}
+/* login*/
+.form-group{
+  font-family: signika negative;
+
 }
 
 /* text is used in js, this will expand below for uitklapfunctie in forms*/
@@ -123,7 +134,10 @@ p.italic {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: 3.6rem; 
-
+  margin-bottom: 1rem;
+}
+.btn-search{
+  margin-bottom: 0rem;
 }
 .coursedescription {
     position: relative;
@@ -206,7 +220,8 @@ p.italic {
 .cta {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: rgba(255, 59, 63, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
 }
 .cta-inner {
   position: relative;
