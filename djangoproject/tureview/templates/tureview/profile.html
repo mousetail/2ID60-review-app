@@ -1,36 +1,28 @@
-background<!-- First base.html will be loaded and the block content will be placed in the base page -->
 {% extends 'tureview/base.html' %}
 {% load static %}
 
-<!-- Used for the title in base.html -->
 {% block title %} Profile {{ user.username }} {% endblock %}
 
 {% block content %}
-<section class="page-section background">
+<section class="page-section cta">
     <div class="container">
       <div class="row">
-
-        <!-- Information of the user-->
         <div class="col-12">
           <h1>{{ user.username }} </h1>
           <p>
             <i>apache</i> <br> <!-- male/female not working -->
             <b>Bachelor: </b> {{ student.get_major_display }} <br>
             <b>Start year: </b> {{ student.startYear }} <br>
-            <b>Thumbs up: </b> !NOT WORKING! <br> <!-- not working -->
-            <b>Thumbs down: </b> !NOT WORKING! <br> <!-- not working -->
+            <b>Thumbs up: </b> {{ upTotal }} <br> <!-- not working -->
+            <b>Thumbs down: </b> {{ downTotal }} <br> <!-- not working -->
             <b>Total reviews: </b> {{ reviews.count }} <br>
           </p>
         </div>
-
-        <!-- Reviews of the user -->
         <div class="row">
           <div class="col-12">
             <h1>Reviews of {{ user.username }} </h1>
           </div>
           {% for review in reviews %}
-
-          <!-- what will be shown per review -->
           <div class="col-12 jumbotron">
             <p>
               <b>Grade: </b> !NOT WORKING! <br>
