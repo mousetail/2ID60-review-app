@@ -23,7 +23,7 @@
       <p class="center" width="100%"> here we show a video with explanation for how to use this application </p>
       <iframe class="center" width="560" height="315" src="https://www.youtube.com/embed/xOakg4gV69A" frameborder="0"
               allow="autoplay; encrypted-media" allowfullscreen controls>Video not supported</iframe>
-      
+
 
     </div>
   </div>
@@ -42,7 +42,7 @@
                 <span class="text-uppercase text-expanded tcbigger coursecode">{{ topcourses.0.id }}</span>
               </h2>
               <div class="float-block">
-                <p class="tbig gradeblock">{{ topcourses.0.averageRating }}</p>
+                <p class="tbig gradeblock">{{ topcourses.0.getAverage }}</p>
                 <p class="tcsmaller">review amount: {{ topcourses.0.reviewNumber }}</p>
               </div>
               <p class="mb-0 tcsmall" > Short description:</p>
@@ -64,7 +64,7 @@
                 <span class="text-uppercase text-expanded tcbigger">{{ topcourses.1.id }}</span>
               </h2>
               <div class="float-block">
-                <p class="tbig gradeblock">{{ topcourses.1.averageRating }}</p>
+                <p class="tbig gradeblock">{{ topcourses.1.getAverage }}</p>
                 <p class="tcsmaller">review amount: {{ topcourses.1.reviewNumber }}</p>
               </div>
               <p class="mb-0 tcsmall" > Short description:</p>
@@ -86,7 +86,7 @@
                 <span class="text-uppercase text-expanded tcbigger">{{ topcourses.2.id }}</span>
               </h2>
               <div class="float-block">
-                <p class="tbig gradeblock">{{ topcourses.2.averageRating }}</p>
+                <p class="tbig gradeblock">{{ topcourses.2.getAverage }}</p>
                 <p class="tcsmaller">review amount: {{ topcourses.2.reviewNumber }}</p>
               </div>
               <p class="mb-0 tcsmall" > Short description:</p>
