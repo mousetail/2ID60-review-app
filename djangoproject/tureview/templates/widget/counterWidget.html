@@ -1,5 +1,7 @@
 {% load static %}
+<br>
 <span class="rating" {% include "django/forms/widgets/attrs.html" %}>
+    <div class="ratingfloatleft">
         <div class="rating">
             <input id="str10" name="{{widget.name}}" type="radio" value="10" class="radio-btn hide" />
             <label for="str10" >❿</label>
@@ -23,6 +25,7 @@
             <label for="str1" >❶</label>
             <div class="clear"></div>
         </div>
+      </div>
 </span>
 
 <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">

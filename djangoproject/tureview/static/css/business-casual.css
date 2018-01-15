@@ -12,24 +12,24 @@ body {
 
 }
 
-.txt-center {
-  text-align: center;
-}
 .hide {
   display: none;
+}
+.ratingfloatleft {
+  display:inline-block;
 }
 
 .clear {
   float: none;
   clear: both;
 }
-
 .rating {
-    width: 180px;
+    width: auto;
     unicode-bidi: bidi-override;
     direction: rtl;
     text-align: center;
     position: relative;
+    font-family: FontAwesome;
 }
 
 .rating > label {
@@ -41,12 +41,14 @@ body {
     width: 1.1em;
     cursor: pointer;
     color: black;
+    font-family: FontAwesome;
 }
 
 .rating > label:hover,
 .rating > label:hover ~ label,
 .rating > input.radio-btn:checked ~ label {
     color: #d09900;
+    font-family: FontAwesome;
 }
 
 .rating > label:hover:before,
@@ -57,7 +59,9 @@ body {
     position: absolute;
     left: 0;
     color: purple;
+    font-family: font-Awesome;
 }
+
 
 button.res {
     background-color: #F75A5E;
@@ -174,32 +178,25 @@ p.italic {
 }
 .tsmall {
   font-size: calc(8px + 0.4vmin);
-  
+  text-transform: lowercase;
 }
 .tbig {
   font-size: calc(10px + 2.1vmin);
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 .uppercase {
   font-size: calc(10px + 2.1vmin);
   text-transform: uppercase;
 }
-.small{
-  font-size: 10px;
-}
 .text-primary {
   color #e6a756 !important
-}
-.tcbigger{
-  font-family: Roboto;
 }
 
 .centralize {
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
-  margin-bottom: 1rem;
-  font-family: raleway;
+  text-transform: uppercase;
   color: black;
 }
 .btn-xl {

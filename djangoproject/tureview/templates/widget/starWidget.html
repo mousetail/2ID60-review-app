@@ -1,5 +1,7 @@
 {% load static %}
+<br>
 <span class="rate" {% include "django/forms/widgets/attrs.html" %}>
+  <div class="ratingfloatleft">
         <div class="rating">
             <input id="rating0{{widget.name}}" name="{{widget.name}}" type="radio" value="5" class="radio-btn hide" />
             <label for="rating0{{widget.name}}" title="5 stars">&#xf005;</label>
@@ -13,4 +15,6 @@
             <label for="rating8{{widget.name}}" title="1 star">&#xf005;</label>
             <div class="clear"></div>
         </div>
+      </div>
 </span>
+<br>
