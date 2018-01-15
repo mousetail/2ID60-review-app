@@ -186,6 +186,8 @@ p.italic {
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
+  text-transform: uppercase;
+  color: black;
 }
 .login{
   font-family: signika;
@@ -199,7 +201,7 @@ p.italic {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  
+
   cursor:hand;
   cursor:pointer;
 }
@@ -457,8 +459,8 @@ p.italic {
   padding: 1rem 3rem 1rem 3rem;
   position: relative;
   display: block;
-  color: #365158; 
-  
+  color: #365158;
+
 }
 .username{
   font-family: raleway;
@@ -477,6 +479,6 @@ p.italic {
   font-size: 28px;
   margin-top: 4rem;
   margin-left: 1rem;
-  
+
 
 }
