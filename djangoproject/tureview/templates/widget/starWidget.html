@@ -1,23 +1,20 @@
 {% load static %}
-
-<span>
-    <div class="rate">
-      <span>
-        <input type="radio" id="rating8{{widget.name}}" name="{{widget.name}}" value="2" />
-        <label for="rating8{{widget.name}}" title="1 stars">&#xf005;</label>
-      </span><span>
-        <input type="radio" id="rating6{{widget.name}}" name="{{widget.name}}" value="4" />
-        <label for="rating6{{widget.name}}" title="2 stars">&#xf005;</label>
-      </span>
-      <span>
-        <input type="radio" id="rating4{{widget.name}}" name="{{widget.name}}" value="6" />
-        <label for="rating4{{widget.name}}" title="3 stars">&#xf005;</label>
-      </span><span>
-        <input type="radio" id="rating2{{widget.name}}" name="{{widget.name}}" value="8" />
-        <label for="rating2{{widget.name}}" title="4 stars">&#xf005;</label>
-      </span><span>
-        <input type="radio" id="rating0{{widget.name}}" name="{{widget.name}}" value="10" />
-        <label for="rating0{{widget.name}}" title="5 stars">&#xf005;</label>
-      </span>
-    </div>
+<br>
+<span class="rate" {% include "django/forms/widgets/attrs.html" %}>
+  <div class="ratingfloatleft">
+        <div class="rating">
+            <input id="rating0{{widget.name}}" name="{{widget.name}}" type="radio" value="5" class="radio-btn hide" />
+            <label for="rating0{{widget.name}}" title="5 stars">&#xf005;</label>
+            <input id="rating2{{widget.name}}" name="{{widget.name}}" type="radio" value="4" class="radio-btn hide" />
+            <label for="rating2{{widget.name}}" title="4 stars">&#xf005;</label>
+            <input id="rating4{{widget.name}}" name="{{widget.name}}" type="radio" value="3" class="radio-btn hide" />
+            <label for="rating4{{widget.name}}" title="3 stars">&#xf005;</label>
+            <input id="rating6{{widget.name}}" name="{{widget.name}}" type="radio" value="2" class="radio-btn hide" />
+            <label for="rating6{{widget.name}}" title="2 stars">&#xf005;</label>
+            <input id="rating8{{widget.name}}" name="{{widget.name}}" type="radio" value="1" class="radio-btn hide" />
+            <label for="rating8{{widget.name}}" title="1 star">&#xf005;</label>
+            <div class="clear"></div>
+        </div>
+      </div>
 </span>
+<br>

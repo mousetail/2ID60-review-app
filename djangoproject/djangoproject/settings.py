@@ -25,7 +25,8 @@ SECRET_KEY = '&l2ycm7v#_xhtaazj@nf^@7+k@(d1*pqo3)6bc$sdnq+x!kppp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ["2id60.win.tue.nl:8833", "2id60.win.tue.nl", "127.0.0.1"]
 
 
 # Application definition
