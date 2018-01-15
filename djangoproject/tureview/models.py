@@ -67,7 +67,6 @@ class Student(models.Model):
         ('id', 'Industrial Design')
     )
     major = models.CharField(max_length=16, choices=MAJOR_OPTIONS)
-    #MALE/FEMALE/APACHE???
 
     def __str__(self):
         return self.user.username

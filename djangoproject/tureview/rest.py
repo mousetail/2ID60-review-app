@@ -89,7 +89,7 @@ def search(request):
         output.sort(key=sortfuncs[sortfunc])
 
 
-    return HttpResponse(json.dumps(output), content_type="application/json")
+    return HttpResponse(json.dumps(output[:25]), content_type="application/json")
 
 @csrf_exempt
 def thumbs(request, code):
@@ -131,7 +131,7 @@ def thumbs(request, code):
 
 
 @csrf_exempt
-def thumbsProfile(request, username):
+def thumbsProfile(request):
     student = Student.objects.get(user=request.user)
     review_pk = request.POST.get("review_pk", "")
     review = Review.objects.get(pk=review_pk)
