@@ -127,25 +127,32 @@ p.italic {
 }
 .tsmall {
   font-size: calc(8px + 0.4vmin);
-  text-transform: lowercase;
+  
 }
 .tbig {
   font-size: calc(10px + 2.1vmin);
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 .uppercase {
   font-size: calc(10px + 2.1vmin);
   text-transform: uppercase;
 }
+.small{
+  font-size: 10px;
+}
 .text-primary {
   color #e6a756 !important
+}
+.tcbigger{
+  font-family: Roboto;
 }
 
 .centralize {
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
-  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-family: raleway;
   color: black;
 }
 .btn-xl {
