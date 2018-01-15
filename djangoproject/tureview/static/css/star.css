@@ -6,43 +6,35 @@
     direction: rtl;
     text-align: center;
     position: relative;
+    font-family: FontAwesome;
 }
 
-.rate > span {
-    padding: 0px;
-    margin: 0px;
-}
-/* Hide radio */
-.rate > span > input {
-    display: none;
-}
-.rate > span > label {
+.rate > label {
+    float: right;
+    display: inline;
+    padding: 0;
     margin: 0;
     position: relative;
     width: 1.1em;
-    color: black;
-    display: inline-block;
-    font-size: 1.1rem;
-    padding: 0 0;
     cursor: pointer;
+    color: black;
     font-family: FontAwesome;
 }
-/* The star of the show */
-.rate > span > input:checked + label {
-    color: black;
-}
-/* Zero stars rating */
-.rate > span > input:not(:checked) + label {
-    color: red;
+
+.rate > label:hover,
+.rate > label:hover ~ label,
+.rate > input.radio-btn:checked ~ label {
+    color: #d09900;
+    font-family: FontAwesome;
 }
 
-.rating > span > input {
-    display: none;
-}
-
-.rating > span > input:checked + label {
-    color: black;
-}
-.rating > span > input:not(:checked) + label {
-    color: red;
+.rate > label:hover:before,
+.rate > label:hover ~ label:before,
+.rate > input.radio-btn:checked ~ label:before,
+.rate > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: purple;
+    font-family: Font-Awesome;
 }
