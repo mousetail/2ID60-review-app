@@ -8,8 +8,8 @@
 <section class="page-section cta">
   <div class="container">
     <div class="row center">
-      <h1 class="center">Welcome to TUreview</h1>
-      <p class="center">The TUreview helps you what course to choose! By giving access to peer reviews you can filter out the right course for you! The webapp also gives the opportunity to give a review yourself. </p>
+      <h1 class="center">Welcome to TuReview</h1>
+      <p class="center">The TuReview helps you what course to choose! By giving access to peer reviews you can filter out the right course for you! The webapp also gives the opportunity to give a review yourself. </p>
       <a class="btn btn-primary btn-xl center" href="search.html">Click to search for a course</a>
     </div>
   </div>
@@ -33,7 +33,7 @@
         <div class="col-xl-9 mx-auto">
           <a href="{% url 'course' code=topcourses.0.id %}">
             <div class="cta-innerhover text-center rounded">
-              <h2 class="section-heading mb-4 text-center centralize">
+              <h2 class="mb-4 text-center centralize">
                 <span class="tcbig">Best rated course:</span></br>
                 <span class="tcbig">{{ topcourses.0.name }}</span></br>
                 <span class="text-uppercase text-expanded tcbigger">{{ topcourses.0.id }}</span>
@@ -55,7 +55,7 @@
         <div class="col-xl-9 mx-auto">
           <a href="{% url 'course' code=topcourses.0.id %}">
             <div class="cta-innerhover text-center rounded">
-              <h2 class="section-heading mb-4 text-center centralize">
+              <h2 class="centralize mb-4 text-center">
                 <span class="tcbig">Second best rated course:</span></br>
                 <span class="tcbig">{{ topcourses.1.name }}</span></br>
                 <span class="text-uppercase text-expanded tcbigger">{{ topcourses.1.id }}</span>
@@ -77,7 +77,7 @@
         <div class="col-xl-9 mx-auto">
           <a href="{% url 'course' code=topcourses.0.id %}">
             <div class="cta-innerhover text-center rounded">
-              <h2 class="section-heading mb-4 text-center centralize">
+              <h2 class="mb-4 text-center centralize">
                 <span class="tcbig">Third best rated course:</span></br>
                 <span class="tcbig">{{ topcourses.2.name }}</span></br>
                 <span class="text-uppercase text-expanded tcbigger">{{ topcourses.2.id }}</span>
