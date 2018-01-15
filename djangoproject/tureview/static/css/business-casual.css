@@ -127,10 +127,15 @@ p.italic {
 }
 .tsmall {
   font-size: calc(8px + 0.4vmin);
-
+  text-transform: lowercase;
 }
 .tbig {
   font-size: calc(10px + 2.1vmin);
+  text-transform: lowercase;
+}
+.uppercase {
+  font-size: calc(10px + 2.1vmin);
+  text-transform: uppercase;
 }
 .text-primary {
   color #e6a756 !important
