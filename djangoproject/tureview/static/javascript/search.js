@@ -7,6 +7,7 @@ $(document).ready(function() {
         });
 });
 
+
 $("#searchform").on("submit", function(ev) {
     ev.preventDefault();
     var value = $("#idfield").val();
