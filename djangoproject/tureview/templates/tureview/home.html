@@ -21,7 +21,8 @@
     <div class="row center">
       <h1 class="center">Help video</h1>
       <p class="center" width="100%"> here we show a video with explanation for how to use this application </p>
-      <iframe class="center" width="560" height="315" src="https://www.youtube.com/embed/Zftx68K-1D4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen controls>Video not supported</iframe>
+      <iframe class="center" width="560" height="315" src="https://www.youtube.com/embed/xOakg4gV69A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen controls>Video not supported</iframe>
+      
 
     </div>
   </div>
@@ -35,7 +36,7 @@
           <a href="{% url 'course' code=topcourses.0.id %}">
             <div class="cta-innerhover text-center rounded">
               <h2 class="mb-4 text-center centralize">
-                <span class="tcbig">Best rated course:</span></br>
+                <span class="tcbig uppercase">Best rated course:</span></br>
                 <span class="tcbig">{{ topcourses.0.name }}</span></br>
                 <span class="text-uppercase text-expanded tcbigger">{{ topcourses.0.id }}</span>
               </h2>
@@ -57,7 +58,7 @@
           <a href="{% url 'course' code=topcourses.1.id %}">
             <div class="cta-innerhover text-center rounded">
               <h2 class="centralize mb-4 text-center">
-                <span class="tcbig">Second best rated course:</span></br>
+                <span class="tcbig uppercase">Second best rated course:</span></br>
                 <span class="tcbig">{{ topcourses.1.name }}</span></br>
                 <span class="text-uppercase text-expanded tcbigger">{{ topcourses.1.id }}</span>
               </h2>
@@ -79,7 +80,7 @@
           <a href="{% url 'course' code=topcourses.2.id %}">
             <div class="cta-innerhover text-center rounded">
               <h2 class="mb-4 text-center centralize">
-                <span class="tcbig">Third best rated course:</span></br>
+                <span class="tcbig uppercase">Third best rated course:</span></br>
                 <span class="tcbig">{{ topcourses.2.name }}</span></br>
                 <span class="text-uppercase text-expanded tcbigger">{{ topcourses.2.id }}</span>
               </h2>
