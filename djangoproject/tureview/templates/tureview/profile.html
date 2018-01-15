@@ -33,7 +33,7 @@
                      <col span="1" style="width: 15%;">
                   </colgroup>
                   <tr>
-                    <th class="tbig" colspan="2">{{ review.timeslot.course }}</th>
+                    <th class="tbig" colspan="2"><a href="{% url 'course' code=review.timeslot.course.id %}">{{ review.timeslot.course }}</a></th>
                     <th class="tbig" style="text-align: right;">{{review.ratingOverall}}</th>
                   </tr>
                   <tr>
