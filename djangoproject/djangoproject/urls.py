@@ -20,9 +20,9 @@ urlpatterns = [
         name='logout'),
     url(r'^accounts/register$', tuview.register, name='register'),
     url(r'^accounts/profile/$', tuview.profile, name='profile'),
-    url(r'^accounts/profile/thumbs/$', turest.thumbsProfile, name='profile.thumbs'),
+    url(r'^accounts/profile/thumbs/$', turest.thumbsProfile, name='profileThumbs'),
+    url(r'^accounts/profile/(?P<username>.+)/thumbs/$', turest.thumbsUserprofile, name='userprofileThumbs'),
     url(r'^accounts/profile/(?P<username>.+)/$', tuview.userprofile, name='userprofile'),
-    url(r'^accounts/profile/(?P<username>.+)/thumbs/$', turest.thumbsProfile, name='userprofileThumbs'),
     url(r'^api/search$', turest.search)
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

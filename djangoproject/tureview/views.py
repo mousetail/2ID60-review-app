@@ -161,7 +161,7 @@ def profile(request):
 def userprofile(request, username):
     if request.user.is_authenticated:
         current_student = Student.objects.get(user=request.user)
-    user = User.objects.get(username=username) # kan vast eleganter
+    user = User.objects.get(username=username)
     student = Student.objects.get(user=user)
     reviews = Review.objects.filter(student=student)
     thumbsUp = 0

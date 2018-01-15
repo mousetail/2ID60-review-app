@@ -56,10 +56,33 @@
                 <div class="tsmall" id="panel" style="display:none;">started this course as a {{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br> from: {{ review.student.get_major_display }}</br></br>
                   <p class="italic">{{ review.reviewLong }}</p>
                   <p>
-                    <b>Informative: <span id="ratingInf">{{ review.ratingInf }}<span></b><br>
-                    <b>Time consuming: </b><span id="ratingTime">{{ review.ratingTime }}</span><br>
-                    <b>Relevant: </b><span id="ratingRele">{{ review.ratingRele }}</span><br>
-                    <b>Difficult: </b><span id="ratingDiff">{{ review.ratingDiff }}</span><br>
+                    <table style="border-collapse: collapse;">
+                      <colgroup>
+                         <col span="1" style="width: auto;">
+                         <col span="1" style="width: 10px;">
+                         <col span="1" style="width: auto;">
+                      </colgroup>
+                      <tr>
+                        <td><b>Informative: </b></td>
+                        <td></td>
+                        <td><span id="ratingInf"><span></td>
+                      </tr>
+                      <tr>
+                        <td><b>Time consuming:</b></td>
+                        <td></td>
+                        <td><span id="ratingTime"></span></td>
+                      </tr>
+                      <tr>
+                        <td><b>Relevant: </b></td>
+                        <td></td>
+                        <td><span id="ratingRele"></span></td>
+                      </tr>
+                      <tr>
+                        <td><b>Difficult: </b></td>
+                        <td></td>
+                        <td><span id="ratingDiff"></span></td>
+                      </tr>
+                    </table>
                     <input id="ratingInf-value" type="hidden" value="{{ review.ratingInf }}" ></input>
                     <input id="ratingTime-value" type="hidden" value="{{ review.ratingTime }}" ></input>
                     <input id="ratingRele-value" type="hidden" value="{{ review.ratingRele }}" ></input>
