@@ -160,9 +160,11 @@ cursor:pointer;
   width:100%;
   font-family: signika negative;
   margin: 1rem;
-
 }
-
+.margin{
+  margin-top: 1rem;
+  margin-bottom:1rem !important;
+}
 #idfield{
   position:relative;
   width: 200px;
@@ -209,8 +211,7 @@ p.italic {
   margin-bottom: 1rem;
   margin-left: 1rem;
   margin-top: 6px;
-  cursor:hand;
-  cursor:pointer;
+  
 }
 .btn-search{
   margin-bottom: 0rem!important;
@@ -246,6 +247,8 @@ p.italic {
 }
 .btn {
   box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
+  cursor:hand;
+  cursor:pointer;
 }
 .btn-primary {
   background-color: #365158;
@@ -486,4 +489,12 @@ p.italic {
   font-size: 28px;
   margin-top: 4rem;
   margin-left: 1rem;
+}
+.link-course{
+  color: #2d3d3f;
+  
+}
+.link-course:hover{
+  color: #3e6d75;
+  text-decoration: underline;
 }

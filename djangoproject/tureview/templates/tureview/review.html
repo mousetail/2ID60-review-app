@@ -11,7 +11,7 @@
 {% block content %}
 <section class="page-section background">
     <div class="container">
-      <h1 class="tbig">Writing a review for {{ course.id }} - {{ course.name }}</h1>
+      <h1 class="tbig margin">Writing a review for {{ course.id }} - {{ course.name }}</h1>
       <form method="post" novalidate>
         {% csrf_token %}
 
@@ -52,7 +52,7 @@
           </div>
         {% endfor %}
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="margin btn btn-primary">Submit</button>
       </form>
 
     </div>

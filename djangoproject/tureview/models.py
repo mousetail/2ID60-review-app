@@ -45,7 +45,7 @@ class Course(models.Model):
 
 
 class Timeslot(models.Model):
-    course = models.ForeignKey(Course)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
     letter = models.CharField(max_length=1, choices=((i, i) for i in 'abcdex'))
     quartile = models.CharField(max_length=2,
                                 choices=tuple((str(i), str(i))
@@ -58,7 +58,7 @@ class Timeslot(models.Model):
 
 
 class Student(models.Model):
-    user = models.OneToOneField('auth.User', primary_key=True)
+    user = models.OneToOneField('auth.User', primary_key=True, on_delete=models.CASCADE)
     startYear = models.IntegerField()
     MAJOR_OPTIONS = (
         ('sfs', 'Software Science'),
@@ -75,11 +75,11 @@ class Student(models.Model):
 class Review(models.Model):
     thumbsUp = models.ManyToManyField(Student, related_name="thumbsUp")
     thumbsDown = models.ManyToManyField(Student, related_name="thumbsDown")
-    student = models.ForeignKey(Student)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
     reviewShort = models.CharField(max_length=200)
     reviewLong = models.TextField()
     date = models.DateField(default=timezone.now)
-    timeslot = models.ForeignKey(Timeslot)
+    timeslot = models.ForeignKey(Timeslot, on_delete=models.CASCADE)
     ratingOverall = models.IntegerField(default=0)
     ratingInf = models.IntegerField(default=0)
     ratingTime = models.IntegerField(default=0)
