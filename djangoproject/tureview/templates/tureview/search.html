@@ -40,7 +40,7 @@
           <label for="namefield">Name: </label>
           <input id="namefield"><br>
           <label for="yearfield">Year: </label>
-          <input id="yearfield" name="year"><br>
+          <input id="yearfield" name="year" type="number" value="{% now "Y" %}" required><br>
           <label for="quartilefield">Quartile: </label>
           <select id="quartilefield" name="quartile">
             <option value="" selected="selected">any</option>
