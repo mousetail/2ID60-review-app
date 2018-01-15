@@ -50,7 +50,6 @@ function thumbs(upDown, event) {
     other_active = $(event.currentTarget).siblings('#thumbsUp').children('.active');
     other_inactive = $(event.currentTarget).siblings('#thumbsUp').children('.inactive');
   }
-  console.log(review_pk)
 
   $.ajax({
     url: window.location.href + 'thumbs/',

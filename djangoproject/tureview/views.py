@@ -143,23 +143,43 @@ def profile(request):
     thumbsUp = 0
     thumbsDown = 0
     for review in reviews:
+        thumbsUp += review.thumbsUp.count()
+        thumbsDown += review.thumbsDown.count()
         if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
-            thumbsUp += 1
+            #thumbsUp += 1
+            review.up = True
+        else:
+            review.up = False
         if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
-            thumbsDown += 1
+            #thumbsDown += 1
+            review.down = True
+        else:
+            review.down = False
     return render(request, "tureview/profile.html", {'user': user,
         'student': student, 'reviews': reviews, 'upTotal': thumbsUp, 'downTotal': thumbsDown})
 
 def userprofile(request, username):
+    if request.user.is_authenticated:
+        current_student = Student.objects.get(user=request.user)
     user = User.objects.get(username=username) # kan vast eleganter
     student = Student.objects.get(user=user)
     reviews = Review.objects.filter(student=student)
     thumbsUp = 0
     thumbsDown = 0
     for review in reviews:
-        if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
-            thumbsUp += 1
-        if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
-            thumbsDown += 1
+        #if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
+            #thumbsUp += 1
+        #if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
+            #thumbsDown += 1
+        thumbsUp += review.thumbsUp.count()
+        thumbsDown += review.thumbsDown.count()
+        if Review.objects.filter(pk=review.pk, thumbsUp__pk=current_student.pk).exists():
+            review.up = True
+        else:
+            review.up = False
+        if Review.objects.filter(pk=review.pk, thumbsDown__pk=current_student.pk).exists():
+            review.down = True
+        else:
+            review.down = False
     return render(request, "tureview/profile.html", {'user': user,
         'student': student, 'reviews': reviews, 'upTotal': thumbsUp, 'downTotal': thumbsDown})
