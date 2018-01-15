@@ -68,3 +68,4 @@ function thumbs(upDown, event) {
     }
   });
 }
+
