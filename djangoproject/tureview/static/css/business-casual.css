@@ -127,7 +127,7 @@ p.italic {
 }
 .tsmall {
   font-size: calc(8px + 0.4vmin);
-  
+
 }
 .tbig {
   font-size: calc(10px + 2.1vmin);
@@ -140,6 +140,8 @@ p.italic {
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
+  text-transform: uppercase;
+  color: black;
 }
 .btn-xl {
   font-weight: 700;
@@ -195,7 +197,7 @@ p.italic {
   font-weight: 400;
   font-family: signika;
   font-size: 16px;
-  margin:1rem;
+  margin:3px;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background-color: #365158;
@@ -274,7 +276,7 @@ p.italic {
   position: relative;
   padding-top: 20px;
   padding-right: 5px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   padding-left: 5px;
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
@@ -410,8 +412,8 @@ p.italic {
   padding: 1rem 3rem 1rem 3rem;
   position: relative;
   display: block;
-  color: #365158; 
-  background-color: white; 
+  color: #365158;
+  background-color: white;
 }
 .username{
   font-family: raleway;
