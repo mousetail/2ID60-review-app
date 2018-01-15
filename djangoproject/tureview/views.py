@@ -159,8 +159,10 @@ def profile(request):
         'student': student, 'reviews': reviews, 'upTotal': thumbsUp, 'downTotal': thumbsDown})
 
 def userprofile(request, username):
+    current_student_set = False
     if request.user.is_authenticated:
         current_student = Student.objects.get(user=request.user)
+        current_student_set = True
     user = User.objects.get(username=username)
     student = Student.objects.get(user=user)
     reviews = Review.objects.filter(student=student)
@@ -173,13 +175,14 @@ def userprofile(request, username):
             #thumbsDown += 1
         thumbsUp += review.thumbsUp.count()
         thumbsDown += review.thumbsDown.count()
-        if Review.objects.filter(pk=review.pk, thumbsUp__pk=current_student.pk).exists():
-            review.up = True
-        else:
-            review.up = False
-        if Review.objects.filter(pk=review.pk, thumbsDown__pk=current_student.pk).exists():
-            review.down = True
-        else:
-            review.down = False
+        if current_student_set:
+            if Review.objects.filter(pk=review.pk, thumbsUp__pk=current_student.pk).exists():
+                review.up = True
+            else:
+                review.up = False
+            if Review.objects.filter(pk=review.pk, thumbsDown__pk=current_student.pk).exists():
+                review.down = True
+            else:
+                review.down = False
     return render(request, "tureview/profile.html", {'user': user,
         'student': student, 'reviews': reviews, 'upTotal': thumbsUp, 'downTotal': thumbsDown})
