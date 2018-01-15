@@ -53,7 +53,13 @@
               </table>
               <div>
                 <div class="tsmall" id="panel" style="display:none;">started this course as a {{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br> from: {{ review.student.get_major_display }}</br></br>
-                  {{ review.reviewLong }}
+                  <p>{{ review.reviewLong }}</p>
+                  <p>
+                    <b>Informative: </b> {{ review.ratingInf }} <br>
+                    <b>Time consuming: </b> {{ review.ratingTime }} <br>
+                    <b>Relevant: </b> {{ review.ratingRele }} <br>
+                    <b>Difficult: </b> {{ review.Diff }} <br>
+                  </p>
                 </div>
                 <div id="flip">
 
