@@ -128,3 +128,42 @@ def thumbs(request, code):
         downCount = review.thumbsDown.count()
         data = {'state': rtn, 'up': upCount, 'down': downCount}
         return JsonResponse(data, safe=False)
+
+
+@csrf_exempt
+def thumbsProfile(request, username):
+    student = Student.objects.get(user=request.user)
+    review_pk = request.POST.get("review_pk", "")
+    review = Review.objects.get(pk=review_pk)
+
+    if request.method == 'POST':
+        upDown = request.POST.get("thumbs", "")
+        rtn = 'none'
+
+        if upDown == 'up': # student clicked 'up'
+            if Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
+                review.thumbsDown.remove(student)
+                review.thumbsUp.add(student)
+                rtn = 'up'
+            elif Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
+                review.thumbsUp.remove(student)
+                rtn = 'none'
+            else:
+                review.thumbsUp.add(student)
+                rtn = 'up'
+        elif upDown == 'down': # student clicked 'down'
+            if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
+                review.thumbsUp.remove(student)
+                review.thumbsDown.add(student)
+                rtn = 'down'
+            elif Review.objects.filter(pk=review.pk, thumbsDown__pk=student.pk).exists():
+                review.thumbsDown.remove(student)
+                rtn = 'none'
+            else:
+                review.thumbsDown.add(student)
+                rtn = 'down'
+
+        upCount = review.thumbsUp.count()
+        downCount = review.thumbsDown.count()
+        data = {'state': rtn, 'up': upCount, 'down': downCount}
+        return JsonResponse(data, safe=False)
