@@ -2,7 +2,7 @@
 
 $(document).ready(() => {
 
-
+  setStars();
 
   $('.thumbsUp').on('click', event => {
     // console.log('Thumbs Up button clicked');
@@ -33,6 +33,51 @@ $(document).ready(() => {
   });
 
 });
+
+function setStars() {
+  $('.whitebox').each(function(){
+    // use $(this) to reference the current div in the loop
+    let parent = $(this).find('#panel');
+    let star = "<i class='fa fa-star'></i>";
+    let starO = "<i class='fa fa-star-o'></i>";
+
+    let infValue  = parent.find('#ratingInf-value').val();
+    let ratingInf = parent.find('#ratingInf');
+    let timeValue  = parent.find('#ratingTime-value').val();
+    let ratingTime = parent.find('#ratingTime');
+    let ReleValue  = parent.find('#ratingRele-value').val();
+    let ratingRele = parent.find('#ratingRele');
+    let DiffValue  = parent.find('#ratingDiff-value').val();
+    let ratingDiff = parent.find('#ratingDiff');
+    console.log("added stars");
+    for (let i = 0; i < 5; i++) {
+      if (i < infValue) {
+        ratingInf.append(star);
+      }
+      else {
+        ratingInf.append(starO);
+      }
+      if (i < timeValue) {
+        ratingTime.append(star);
+      }
+      else {
+        ratingTime.append(starO);
+      }
+      if (i < ReleValue) {
+        ratingRele.append(star);
+      }
+      else {
+        ratingRele.append(starO);
+      }
+      if (i < DiffValue) {
+        ratingDiff.append(star);
+      }
+      else {
+        ratingDiff.append(starO);
+      }
+    }
+  });
+}
 
 function thumbs(upDown, event) {
   let thumbsUp = $(event.currentTarget).siblings('#thumbsUpCount');
