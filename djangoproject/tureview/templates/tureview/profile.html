@@ -2,7 +2,7 @@
 {% load static %}
 {% load costum_filters %}
 {% block title %} Profile {{ user.username }} {% endblock %}
-
+{% csrf_token %}
 {% block content %}
 <section class="page-section cta">
     <div class="container">
@@ -93,6 +93,7 @@
       </div>
     </div>
 </section>
+<script src="{% static 'javascript/ajax.js' %}" defer></script>
 <script src="{% static 'javascript/course.js' %}" defer></script>
 <script>
   $.ajaxSetup({data: {

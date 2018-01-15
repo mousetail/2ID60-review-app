@@ -1,4 +1,8 @@
+
+
 $(document).ready(() => {
+
+
 
   $('.thumbsUp').on('click', event => {
     // console.log('Thumbs Up button clicked');

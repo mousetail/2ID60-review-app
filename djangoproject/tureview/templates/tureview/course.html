@@ -2,7 +2,7 @@
 {% load static %}
 {% load costum_filters %}
 {% block title %} Course {{ course.id }} {% endblock %}
-
+{% csrf_token %}
 {% block content %}
 
 <!-- section voor laag 1-->
@@ -102,5 +102,6 @@
       {% endfor %}
     </section>
 </section>
+<script src="{% static 'javascript/ajax.js' %}" defer></script>
 <script src="{% static 'javascript/course.js' %}" defer></script>
 {% endblock %}

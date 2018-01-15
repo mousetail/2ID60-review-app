@@ -131,7 +131,7 @@ def thumbs(request, code):
 
 
 @csrf_exempt
-def thumbsProfile(request, username):
+def thumbsProfile(request):
     student = Student.objects.get(user=request.user)
     review_pk = request.POST.get("review_pk", "")
     review = Review.objects.get(pk=review_pk)
