@@ -47,7 +47,7 @@ body {
 .rating > label:hover,
 .rating > label:hover ~ label,
 .rating > input.radio-btn:checked ~ label {
-    color: #d09900;
+    color: #ffb600;
     font-family: FontAwesome;
 }
 
@@ -156,6 +156,9 @@ cursor:pointer;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 4px;
 }
+.signika{
+  font-family: signika;
+}
 .full {
   width:100%;
   font-family: signika negative;
@@ -179,7 +182,7 @@ p.italic {
   color: rgb(64,64,64);
 }
 .tsmall {
-  font-size: calc(8px + 0.4vmin);
+  font-size: calc(8px + 0.8vmin);
   text-transform: lowercase;
 }
 .tbig {
@@ -287,7 +290,9 @@ p.italic {
   text-align: center;
   font-family: signika;
 }
-
+.coursecode{
+  font-family: roboto;
+}
 .tcbig {
   font-size: calc(7px + 2.1vmin)
 }
@@ -497,4 +502,10 @@ p.italic {
 .link-course:hover{
   color: #3e6d75;
   text-decoration: underline;
+}
+.rating{
+
+}
+.stars{
+
 }

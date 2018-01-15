@@ -13,13 +13,14 @@
               <div class="coursedescription">
                 <div class="section-heading mb-4">
                     <div>
-                      <span class="tbig">{{course.id}} {{ course.name }}</span>
+                      <span class="tbig uppercase coursecode">{{course.id}}</span>
+                        <span class="tbig">{{ course.name }}</span>
                       <span class="tbig" style="float: right;"><span class="tsmall">average rating:</span> {{ course.getAverage }} </span>
                     </div>
                     <div>
-                      <span class="faculty"> {{ course.get_faculty_display }}</span>
+                      <span class="faculty signika tbig"> {{ course.get_faculty_display }}</span>
                       </div>
-                    <div>
+                    <div class="signika tsmall margin">
                       {{course.descriptionLong}}
                     </div>
                   </div>
