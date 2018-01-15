@@ -33,11 +33,11 @@
                      <col span="1" style="width: 15%;">
                   </colgroup>
                   <tr>
-                    <th class="Uppercase" colspan="2"><a href="{% url 'course' code=review.timeslot.course.id %}">{{ review.timeslot.course }}</a></th>
+                    <th colspan="2"><a href="{% url 'course' code=review.timeslot.course.id %}">{{ review.timeslot.course }}</a></th>
                     <th class="tbig" style="text-align: right;">{{review.ratingOverall}}</th>
                   </tr>
                   <tr>
-                    <td class="tbig" colspan="2">{{ review.reviewShort }}</td>
+                    <td class="text-small" colspan="2">{{ review.reviewShort }}</td>
                     <td class="tsmall" style="text-align: right; overflow: visible;" colspan="2">{{ review.date }}</td>
                   </tr>
                 </table>
