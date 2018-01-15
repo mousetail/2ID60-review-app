@@ -30,7 +30,7 @@ def course(request, code):
     except Course.DoesNotExist:
         return HttpResponse("course \"" + str(code) + "\" does not exist")
     #reviews = Review.objects.filter(timeslot__course=course).order_by('date')
-    reviews = Review.objects.filter(timeslot__course=course).order_by('date').annotate(upvotes=Count('thumbsUp')).order_by('-upvotes')
+    reviews = Review.objects.filter(timeslot__course=course).order_by('date').annotate(upvotes=Count('thumbsUp')-Count('thumbsDown')).order_by('-upvotes')
     if request.user.is_authenticated:
         for review in reviews:
             if Review.objects.filter(pk=review.pk, thumbsUp__pk=student.pk).exists():
