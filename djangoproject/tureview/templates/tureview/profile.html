@@ -1,6 +1,6 @@
 {% extends 'tureview/base.html' %}
 {% load static %}
-
+{% load costum_filters %}
 {% block title %} Profile {{ user.username }} {% endblock %}
 
 {% block content %}
@@ -8,14 +8,14 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          
+
           <h1 class="username" ><i class="user fa fa-user" aria-hidden="true"></i><br><br>  {{ user.username }} </h1>
           <p class="userinfo">
             <i>apache</i> <br> <!-- male/female not working -->
             <b>Bachelor: </b> {{ student.get_major_display }} <br>
             <b>Start year: </b> {{ student.startYear }} <br>
-            <b>Thumbs up: </b> {{ upTotal }} <br> <!-- not working -->
-            <b>Thumbs down: </b> {{ downTotal }} <br> <!-- not working -->
+            <b>Received thumbs up: </b> {{ upTotal }} <br> <!-- not working -->
+            <b>Received thumbs down: </b> {{ downTotal }} <br> <!-- not working -->
             <b>Total reviews: </b> {{ reviews.count }} <br>
           </p>
         </div>
@@ -43,9 +43,19 @@
                   </tr>
                 </table>
                 <div>
-                  <div id="flip"> v
+                  <div id="flip">
+                    <button class="btn btn-primary showMore">
+                      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                      Show more
+                    </button>
+                    <button class="btn btn-primary showLess" style="display: none;">
+                      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                      Show less
+                    </button>
                   </div>
-                  <div class="tsmall" id="panel">started this course as:</br>DOES NOT WORK year student </br></br> {{ review.reviewLong }}
+                  <div class="tsmall" id="panel" style="display:none;">started this course as a {{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br> from: {{ review.student.get_major_display }}</br></br>
+                    {{ review.reviewLong }}
+
                   </div>
                 </div>
                 <div class="aligncenter">
@@ -84,4 +94,9 @@
     </div>
 </section>
 <script src="{% static 'javascript/course.js' %}" defer></script>
+<script>
+  $.ajaxSetup({data: {
+    csrfmiddlewaretoken: '{{ csrf_token }}'
+  }});
+</script>
 {% endblock %}

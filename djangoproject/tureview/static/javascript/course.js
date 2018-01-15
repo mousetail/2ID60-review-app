@@ -11,12 +11,22 @@ $(document).ready(() => {
     thumbs('down', event);
   });
 
-  $("div").siblings("#flip").click(function(){
+  /*$("div").siblings("#flip").click(function(){
       $(this).siblings().slideToggle();
       console.log("flip");
+  });*/
+
+  //$("div").siblings("#flip").siblings().hide();
+
+  $('.showMore').on('click', event => {
+    console.log('Show more');
+    showMore(event);
   });
 
-  $("div").siblings("#flip").siblings().hide();
+  $('.showLess').on('click', event => {
+    console.log('Show less');
+    showLess(event);
+  });
 
 });
 
@@ -36,7 +46,7 @@ function thumbs(upDown, event) {
     other_active = $(event.currentTarget).siblings('#thumbsUp').children('.active');
     other_inactive = $(event.currentTarget).siblings('#thumbsUp').children('.inactive');
   }
-
+  console.log(review_pk)
 
   $.ajax({
     url: window.location.href + 'thumbs/',
@@ -67,4 +77,22 @@ function thumbs(upDown, event) {
 
     }
   });
+}
+
+function showMore(event) {
+  let downButton = $(event.currentTarget);
+  let upButton = $(event.currentTarget).siblings('.showLess');
+  let text = $(event.currentTarget).parents('#flip').siblings('#panel');
+  downButton.hide();
+  upButton.show();
+  text.fadeIn();
+}
+
+function showLess(event) {
+  let upButton = $(event.currentTarget);
+  let downButton = $(event.currentTarget).siblings('.showMore');
+  let text = $(event.currentTarget).parents('#flip').siblings('#panel');
+  downButton.show();
+  upButton.hide();
+  text.fadeOut(200);
 }
