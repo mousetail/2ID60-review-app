@@ -43,19 +43,21 @@
                   </tr>
                 </table>
                 <div>
-                  <div id="flip">
-                    <button class="btn btn-primary showMore">
-                      <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                      Show more
-                    </button>
-                    <button class="btn btn-primary showLess" style="display: none;">
-                      <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                      Show less
-                    </button>
-                  </div>
                   <div class="tsmall" id="panel" style="display:none;">started this course as a {{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br> from: {{ review.student.get_major_display }}</br></br>
                     {{ review.reviewLong }}
+                  </div>
+                  <div id="flip">
 
+                    <div class="aligncenter">
+                      <button class="btn btn-primary showMore">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        Show more
+                      </button>
+                      <button class="btn btn-primary showLess" style="display: none;">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                        Show less
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div class="aligncenter">
