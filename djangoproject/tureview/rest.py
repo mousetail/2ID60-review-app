@@ -89,7 +89,7 @@ def search(request):
         output.sort(key=sortfuncs[sortfunc])
 
 
-    return HttpResponse(json.dumps(output), content_type="application/json")
+    return HttpResponse(json.dumps(output[:25]), content_type="application/json")
 
 @csrf_exempt
 def thumbs(request, code):
