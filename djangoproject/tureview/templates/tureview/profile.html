@@ -43,7 +43,17 @@
                 </table>
                 <div>
                   <div class="tsmall" id="panel" style="display:none;">started this course as a {{ review.timeslot.year|yearStudent:review.student.startYear }} year student <br> from: {{ review.student.get_major_display }}</br></br>
-                    {{ review.reviewLong }}
+                    <p>{{ review.reviewLong }}</p>
+                    <p>
+                      <b>Informative: <span id="ratingInf">{{ review.ratingInf }}<span></b><br>
+                      <b>Time consuming: </b><span id="ratingTime">{{ review.ratingTime }}</span><br>
+                      <b>Relevant: </b><span id="ratingRele">{{ review.ratingRele }}</span><br>
+                      <b>Difficult: </b><span id="ratingDiff">{{ review.ratingDiff }}</span><br>
+                      <input id="ratingInf-value" type="hidden" value="{{ review.ratingInf }}" ></input>
+                      <input id="ratingTime-value" type="hidden" value="{{ review.ratingTime }}" ></input>
+                      <input id="ratingRele-value" type="hidden" value="{{ review.ratingRele }}" ></input>
+                      <input id="ratingDiff-value" type="hidden" value="{{ review.ratingDiff }}" ></input>
+                    </p>
                   </div>
                   <div id="flip">
 
