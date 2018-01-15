@@ -63,10 +63,10 @@ class Student(models.Model):
     MAJOR_OPTIONS = (
         ('sfs', 'Software Science'),
         ('ws', 'Web Science'),
-        ('id', 'Industrial Design')
+        ('id', 'Industrial Design'),
         ('png', 'Psychology & Technology'),
         ('mwt', 'medishe wetenshappen en technologie'),
-        ('ie' 'Industrial Engineering'),
+        ('ie', 'Industrial Engineering'),
         ('si', 'Sustainable Innovation'),
         ('ds', 'Data Science'),
         ('wtbk', 'Werktuigboukunde'),
