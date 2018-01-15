@@ -63,8 +63,21 @@ class Student(models.Model):
     MAJOR_OPTIONS = (
         ('sfs', 'Software Science'),
         ('ws', 'Web Science'),
-        ('ee', 'Electrical Engineering'),
         ('id', 'Industrial Design')
+        ('png', 'Psychology & Technology'),
+        ('mwt', 'medishe wetenshappen en technologie'),
+        ('ie' 'Industrial Engineering'),
+        ('si', 'Sustainable Innovation'),
+        ('ds', 'Data Science'),
+        ('wtbk', 'Werktuigboukunde'),
+        ('aubs', 'Bouwkunde'),
+        ('au', 'Automotive Technology'),
+        ('bmt', 'Biomedishe Technologie'),
+        ('cec', 'Chemical Engineering & Chemisty'),
+        ('cse', 'Computer Science en Engineering'),
+        ('ntk', 'Applied Physics'),
+        ('wis', 'Applied Mathematics'),
+        ('ee', 'Electrical Engineering')
     )
     major = models.CharField(max_length=16, choices=MAJOR_OPTIONS)
 
