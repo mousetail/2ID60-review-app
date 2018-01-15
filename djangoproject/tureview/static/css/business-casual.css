@@ -197,7 +197,7 @@ p.italic {
   font-weight: 400;
   font-family: signika;
   font-size: 16px;
-  margin:1rem;
+  margin:3px;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background-color: #365158;
@@ -276,7 +276,7 @@ p.italic {
   position: relative;
   padding-top: 20px;
   padding-right: 5px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   padding-left: 5px;
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
