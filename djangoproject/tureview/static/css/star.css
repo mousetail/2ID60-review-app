@@ -35,3 +35,14 @@
 .rate > span > input:not(:checked) + label {
     color: red;
 }
+
+.rating > span > input {
+    display: none;
+}
+
+.rating > span > input:checked + label {
+    color: black;
+}
+.rating > span > input:not(:checked) + label {
+    color: red;
+}
