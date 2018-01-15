@@ -11,52 +11,6 @@ body {
   padding-bottom: 100px;
 
 }
-.txt-center {
-  text-align: center;
-}
-.hide {
-  display: none;
-}
-
-.clear {
-  float: none;
-  clear: both;
-}
-
-.rating {
-    width: 180px;
-    unicode-bidi: bidi-override;
-    direction: rtl;
-    text-align: center;
-    position: relative;
-}
-
-.rating > label {
-    float: right;
-    display: inline;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    width: 1.1em;
-    cursor: pointer;
-    color: black;
-}
-
-.rating > label:hover,
-.rating > label:hover ~ label,
-.rating > input.radio-btn:checked ~ label {
-    color: #d09900;
-}
-
-.rating > label:hover:before,
-.rating > label:hover ~ label:before,
-.rating > input.radio-btn:checked ~ label:before,
-.rating > input.radio-btn:checked ~ label:before {
-    content: "\2605";
-    position: absolute;
-    left: 0;
-    color: purple;
-}
 
 button.res {
     background-color: #F75A5E;
@@ -105,17 +59,17 @@ h6{
   cursor:pointer;
   margin-bottom: 1rem;
 }
-/* nav bar*/
-.collapse{
-  font-family: raleway;
-  font-weight: 600;
-}
 /* login*/
 .form-group{
   font-family: signika negative;
-  margin: 1rem;
-
-
+  margin-top: 1rem;
+}
+.login{
+  font-family: signika;
+  display:inline-block;
+  margin-bottom: 4px;
+  margin-left: 0rem!important;
+  margin-right: 2rem;
 }
 
 /* text is used in js, this will expand below for uitklapfunctie in forms*/
@@ -189,11 +143,6 @@ p.italic {
   text-transform: uppercase;
   color: black;
 }
-.login{
-  font-family: signika;
-  display:inline-block;
-  margin-bottom: 4px;
-}
 .btn-xl {
   font-weight: 700;
   font-size: 0.8rem;
@@ -201,12 +150,15 @@ p.italic {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-top: 6px;
   cursor:hand;
   cursor:pointer;
 }
 .btn-search{
-  margin-bottom: 0rem;
+  margin-bottom: 0rem!important;
+  margin-left: 0rem!important;
   cursor:hand;
   cursor:pointer;
 }
@@ -350,29 +302,30 @@ p.italic {
   margin: 0rem;
   background-color: white;
 }
+
+/*search forms*/
 #facfield{
   width:200px;
 }
-
 #namefield{
   width:210px;
 }
-
 #yearfield{
-  width: 220px;
+  width: 219.5px;
 }
 #quartilefield{
   width: 193.5px;
 }
 #timeslotfield{
-  width: 192px;
+  width: 191.5px;
 }
 #minratingfield{
-  width: 176px;
+  width: 175px;
 }
 #sortfield{
-  width: 204px;
+  width: 203.5px;
   height: 31px;
+  margin-top: 0rem!important;
 }
 
 .float-block {
@@ -414,6 +367,10 @@ p.italic {
 
 
 /* navbar shizzles */
+.collapse{
+  font-family: raleway;
+  font-weight: 600;
+}
 .toggler{
   cursor:hand;
   cursor:pointer;
@@ -448,10 +405,6 @@ p.italic {
 }
 
 /*profile*/
-#profilePage{
-  position: center;
-  display: inline;
-}
 .user{
   font-size: 200px!important;
   border: solid;
@@ -460,7 +413,7 @@ p.italic {
   position: relative;
   display: block;
   color: #365158;
-
+  background-color: white;
 }
 .username{
   font-family: raleway;
@@ -469,16 +422,12 @@ p.italic {
   margin-top: 4rem;
   text-align: center;
   color: #365158;
-
 }
 .userinfo {
   text-align: center;
 }
-
 .userreview{
   font-size: 28px;
   margin-top: 4rem;
   margin-left: 1rem;
-
-
 }
