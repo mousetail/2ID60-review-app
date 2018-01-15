@@ -17,8 +17,8 @@ class Course(models.Model):
     name = models.CharField(max_length=199)
     descriptionShort = models.CharField(max_length=200)
     descriptionLong = models.TextField()
-    averageRating = models.FloatField()
-    reviewNumber= models.IntegerField(default=0)
+    averageRating = models.FloatField(default=0)
+    reviewNumber = models.IntegerField(default=0)
 
     FACULTY_OPTIONS = (
         ('BMT', 'Biomedishe Technologie'),
@@ -38,7 +38,7 @@ class Course(models.Model):
     teachers = models.ManyToManyField(Teacher)
 
     def __str__(self):
-        return self.id + " "+self.name
+        return self.id + " " + self.name
 
     def getAverage(self):
         return "{0:.1f}".format(self.averageRating)
